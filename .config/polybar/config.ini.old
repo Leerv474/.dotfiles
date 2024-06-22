@@ -1,0 +1,204 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+include-file = $HOME/.config/polybar/colors.ini
+
+[bar/main]
+monitor = eDP-1
+width = 99.4%
+height = 22pt
+radius = 13
+
+fixed-center = true
+
+margin-top = 2
+margin-bottom = 2
+
+
+background = ${colors.base}
+;foreground = ${colors.text}
+
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 2
+
+offset-y = 3
+offset-x = 6
+module-margin = 1
+
+separator = |
+separator-foreground = ${colors.overlay0}
+
+font-0 = "jetbrainsmononerdfont:size=11:weight=bold;3"
+
+modules-left = xworkspaces
+modules-right = pulseaudio xkeyboard bluetooth vpn network-base battery
+modules-center = date
+
+enable-ipc = true
+
+[bar/secondary]
+monitor = DP-1
+
+width = 99.4%
+height = 22pt
+radius = 13
+
+fixed-center = true
+
+margin-top = 2
+margin-bottom = 2
+
+
+background = ${colors.base}
+;foreground = ${colors.text}
+
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 2
+
+offset-y = 3
+offset-x = 6
+module-margin = 1
+
+separator = |
+separator-foreground = ${colors.overlay0}
+
+font-0 = "jetbrainsmononerdfont:size=11:weight=bold;3"
+
+modules-left = xworkspaces 
+modules-right = pulseaudio xkeyboard bluetooth vpn network-base battery
+modules-center = date
+
+enable-ipc = true
+
+[module/xworkspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+
+group-by-monitor = true
+enable-click = false
+enable-scroll = false
+
+format = <label-state>
+
+label-active = %name%
+label-active-background = ${colors.blue}
+label-active-underline= ${colors.mantle}
+label-active-padding = 1
+label-active-radius = 5
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.overlay0}
+label-empty-padding = 1
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume-prefix = "󰕾 "
+format-volume-prefix-foreground = ${colors.text}
+format-volume = <label-volume>
+
+label-volume = %percentage%%
+label-volume-foreground = ${colors.text}
+
+label-muted = "󰖁" 
+label-muted-foreground = ${colors.red}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout = %layout%
+label-layout-foreground = ${colors.text}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-foreground = ${colors.base}
+label-indicator-background = ${colors.blue}
+
+[module/network-base]
+type = internal/network
+interface = wlp2s0
+interval = 5
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = 󰖩 %essid%
+label-disconnected = 󰖪 
+label-disconnected-foreground = ${colors.overlay0}
+
+[module/date]
+type = custom/script
+exec = ${HOME}/.config/polybar/module-scripts/date.sh
+interval = 2
+
+[module/battery]
+type = internal/battery
+
+full-at = 95
+low-at = 20
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ACAD
+
+poll-interval = 5
+
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+
+label-charging = 󰂄 %percentage%%
+
+label-charging-foreground = ${colors.teal}
+
+label-discharging = 󰂀 %percentage%%
+
+label-discharging-foreground = ${colors.blue}
+
+label-full = 󰁹 %percentage%%
+label-full-foreground = ${colors.blue}
+
+label-low = 󰁺 %percentage%%
+label-low-foreground = ${colors.red}
+
+
+[module/bluetooth]
+type = custom/script
+exec = ${HOME}/.config/polybar/module-scripts/bluetooth.sh
+interval = 2
+
+[module/vpn]
+type = custom/script
+exec = ${HOME}/.config/polybar/module-scripts/vpn.sh
+interval = 2
+; vim:ft=dosini

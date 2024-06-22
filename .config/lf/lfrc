@@ -1,0 +1,25 @@
+#basic settings
+set ignorecase true
+set icons true
+set preview true
+set ifs "\n"
+set scrolloff 8
+set drawbox true
+set ratios '2:3'
+set mouse true
+
+set statfmt " \033[1m\033[38;2;138;173;244m\033[38;2;30;30;46m\033[48;2;138;173;244m %p\033[0m\033[48;2;69;71;90m\033[38;2;138;173;244m  %S\033[48;2;24;24;37m\033[38;2;69;71;90m\033[38;2;138;173;244m %t\033[0m\033[38;2;24;24;37m\033[0m| -> %l"
+
+set promptfmt " \033[1m\033[38;2;138;173;244m\033[38;2;30;30;46m\033[48;2;138;173;244m\033[0m\033[48;2;69;71;90m\033[38;2;138;173;244m %w\033[0m\033[38;2;69;71;91m\033[0m"
+
+
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+cmd q &{{
+    exit
+}}

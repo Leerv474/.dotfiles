@@ -1,0 +1,25 @@
+configuration{
+    modi: "drun";
+    icon-theme: "Oranchelo";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   ";
+    normalize-match: true;
+    sort: true;
+    drun-display-format: "{name}";
+    matching: "normal";
+    tokenize: true;
+    cycle: false;
+    drun-match-fields: "name";
+}
+
+@theme "catppuccin-mocha"
+
+listview {
+    columns: 1;
+}
+

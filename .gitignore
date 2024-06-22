@@ -1,0 +1,49 @@
+.config/JetBrains/IdeaIC2023.3/workspace/*
+.config/JetBrains/IdeaIC2023.3/tasks/*
+.config/JetBrains/IdeaIC2023.3/options/actionSummary.xml
+.config/JetBrains/IdeaIC2023.3/options/features.usage.statistics.xml
+.config/JetBrains/IdeaIC2023.3/options/other.xml
+.config/JetBrains/IdeaIC2023.3/options/recentProjects.xml
+.config/JetBrains/IdeaIC2023.3/options/trusted-paths.xml
+.config/JetBrains/IdeaIC2023.3/options/updates.xml
+.config/JetBrains/IdeaIC2023.3/options/vim_settings_local.xml
+.config/JetBrains/IdeaIC2023.3/options/window.state.xml
+.config/JetBrains/IdeaIC2023.3/updatedBrokenPlugins.db
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

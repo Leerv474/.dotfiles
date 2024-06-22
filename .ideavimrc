@@ -1,0 +1,63 @@
+" --- SET
+set scrolloff=8
+set incsearch
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set NERDTree
+set splitright
+set splitbelow
+set clipboard+=unnamedplus
+
+imap <C-;> <ESC>
+
+let mapleader=" "
+nmap <leader>sv :vsplit<CR>
+nmap <leader>sh :split<CR>
+nmap <leader>sx :close<CR>
+
+
+" --- REMAPS
+" Moving indent as much as you want
+vmap < <gv
+vmap > >gv
+" Moving selected text up and down
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
+" Keeping search results at the center
+nmap n nzzzv
+nmap N Nzzzv
+" So paste over doesn't change buffer
+nmap <leader>d \"_d
+vmap <leader>d \"_d
+xmap p \"_dP
+" better yap
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+nmap <C-k> :wincmd k<CR>
+nmap <C-j> :wincmd j<CR>
+nmap <C-h> :wincmd h<CR>
+nmap <C-l> :wincmd l<CR>
+
+" --- IDEA REMAPS
+map <leader>rr <Action>(RenameElement)
+nmap <leader>fu :action FindUsages<cr>
+nmap <leader>gc :action GotoClass<cr>
+nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>gs :action GotoSuperMethod<cr>
+nmap <leader>bp :action PreviousTab<CR>
+nmap <leader>bn :action NextTab<CR>
+nmap <leader>bw :action CloseEditor<CR>
+nmap <leader>fs :action FindInPath<CR>
+nmap <leader>ff :action SearchEverywhere<CR>
+map <leader>pv :NERDTree<CR>
+nmap <leader>nf :action NewFile<CR>
+nmap <leader>gf :action ReformatCode<CR>
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
