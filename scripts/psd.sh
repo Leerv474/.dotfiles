@@ -80,10 +80,10 @@ get_data() {
         read -s -n 1 button
         case "$button" in
             1)
-                echo -n "${values_pair[0]}" | xclip -selection clipboard
+                echo -n "${values_pair[0]}" | wl-copy
                 ;;
             2)
-                echo -n "${values_pair[1]}" | xclip -selection clipboard
+                echo -n "${values_pair[1]}" | wl-copy
                 ;;
             q | Q)
                 exit 0
