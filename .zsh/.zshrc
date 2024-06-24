@@ -87,6 +87,7 @@ alias ssh='kitten ssh'
 alias cat='bat -p'
 alias lg='lazygit'
 alias py='python'
+alias log-out="hyprctl dispatch exit"
 
 mkhtml() {
     mkdir -p $1/css

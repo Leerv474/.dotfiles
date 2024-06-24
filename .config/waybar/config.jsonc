@@ -1,120 +1,118 @@
 {
-  "layer": "top",
-  "position": "top",
-  "spacing": 4,
-  "margin-top": 5,
-  "margin-bottom": 0,
-  "margin-left": 5,
-  "margin-right": 5,
-
-  "modules-left": [
-    "clock"
-  ],
-
-  "modules-center": [
-    "hyprland/workspaces",
-  ],
-
-  "modules-right": [
-    "backlight",
-    "pulseaudio",
-    "network",
-    "battery",
-    "tray",
-  ],
-  
-  
-  "clock": {
-		"format": "<b>󰥔  {:%H:%M | 󰃭  %d/%m, %A}</b> ",
-		//"format": "{:%a}",
-		"tooltip-format": "<tt>{calendar}</tt>",
+    "layer": "top",
+    "position": "top",
+    "spacing": 4,
+    "margin-top": 5,
+    "margin-bottom": 0,
+    "margin-left": 5,
+    "margin-right": 5,
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+    ],
+    "modules-right": [
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray"
+    ],
+    "clock": {
+        "format": "<b>󰥔  {:%H:%M | 󰃭  %d/%m, %A}</b> ",
+        //"format": "{:%a}",
+        "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
-                    "mode"          : "month",
-                    "format": {
-                              "months":     "<span color='#cdd6f4'><b>{}</b></span>",
-                              "days":       "<span color='#cdd6f4'><b>{}</b></span>",
-                              "weeks":      "<span color='#cdd6f4'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#cdd6f4'><b>{}</b></span>",
-                              "today":      "<span color='#f38ba8'><b>{}</b></span>"
-                              }
-                    },
+            "mode": "month",
+            "format": {
+                "months": "<span color='#cdd6f4'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
+                "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
+                "today": "<span color='#f38ba8'><b>{}</b></span>"
+            }
+        },
     },
-
-
-
-    "hyprland/workspaces" : {
+    "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
+            "urgent": "",
+            "active": "",
+            "default": ""
         },
         "persistent-workspaces": {
             "*": 4
-        }       
+        }
     },
-  
-  "backlight": {
-    "format": "{icon} <b>{percent}%</b>",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "tooltip": false,
-   },
-
-  "pulseaudio": {
-    "format": "{icon} <b>{volume}%</b>",
-    "format-bluetooth": "{icon}  <b>{volume}%</b>",
-    "format-bluetooth-muted": "󰝟 ",
-    "format-muted": " 󰝟 ",
-    "format-icons": {
-      "headset": "",
-      "default": ["󰕿", "󰖀", "󰕾"],
+    "backlight": {
+        "format": "{icon} <b>{percent}%</b>",
+        "format-icons": [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ],
+        "tooltip": false,
     },
-    "tooltip": false,
-    "on-click": "pavucontrol",
-  },
-
-  "network": {
-    "interval": 30,
-    "format-wifi": "󰤨 {essid}",
-    "format-ethernet": "󰈀",
-    "fomat-disconnected": "󱚵",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "pulseaudio": {
+        "format": "{icon} <b>{volume}%</b>",
+        "format-bluetooth": "{icon}  <b>{volume}%</b>",
+        "format-bluetooth-muted": "󰝟 ",
+        "format-muted": " 󰝟 ",
+        "format-icons": {
+            "headset": "",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ],
+        },
+        "tooltip": false,
+        "on-click": "pavucontrol",
     },
-    "format": "{icon} {capacity}%",
-    "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
-    "max-length": 25,
-    "tooltip": false,
-  },
-
-
-  "tray": {
-    "icon-size": 20,
-    "spacing": 10,
-  },
-
-  "custom/separator-space": {
-    "format": " ",
-    "tooltip": false,
-  },
-
-  "custom/separator-gap": {
-    "format": "  ",
-    "tooltip": false,
-  },
-
-  "custom/separator-arrow": {
-    "format": "  ",
-    "tooltip": false,
-  },
-
+    "network": {
+        "interval": 30,
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀",
+        "fomat-disconnected": "󱚵",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "󰂎",
+            "󰁻",
+            "󰁽",
+            "󰁿",
+            "󰂁",
+            "󰁹"
+        ],
+        "max-length": 25,
+        "tooltip": false,
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+    },
+    "custom/separator-space": {
+        "format": " ",
+        "tooltip": false,
+    },
+    "custom/separator-gap": {
+        "format": "  ",
+        "tooltip": false,
+    },
+    "custom/separator-arrow": {
+        "format": "  ",
+        "tooltip": false,
+    },
 }

@@ -8,7 +8,23 @@
 }
 
 /* ------ Set a Uniform Border Radius ------ */
-.modules-left, .modules-center, .modules-right, #cpu, #memory, #temperature, #pulseaudio, #backlight, #custom-spotify, #custom-icon, #custom-updates, #network, #battery, #tray, #idle_inhibitor, #custom-power, #custom-notification {
+.modules-left,
+.modules-center,
+.modules-right,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#backlight,
+#custom-spotify,
+#custom-icon,
+#custom-updates,
+#network,
+#battery,
+#tray,
+#idle_inhibitor,
+#custom-power,
+#custom-notification {
   border-radius: 18px;
 }
 
@@ -34,29 +50,37 @@
 }
 
 /* ------ Cpu Usage, Temperature, and Memory ------ */
-#cpu, #temperature, #memory {
+#cpu,
+#temperature,
+#memory {
   background-color: @surface1;
   padding: 2px 5px;
   margin: 4px 2px;
 }
 
-#cpu { color: @peach; }
-#memory { color: @mauve; }
-#temperature { color: @maroon; }
+#cpu {
+  color: @peach;
+}
+#memory {
+  color: @mauve;
+}
+#temperature {
+  color: @maroon;
+}
 
 /* ------ Window Title ------ */
-#window { 
-    color: @text; 
-    padding-right: 4px;
+#window {
+  color: @text;
+  padding-right: 4px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-    border-bottom: 0px solid #ffffff;
-    /* color: #FFFFFF; */
-    background: transparent;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 0px solid #ffffff;
+  /* color: #FFFFFF; */
+  background: transparent;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 /* -----------------------------------------------------
@@ -64,25 +88,25 @@ window#waybar {
  * ----------------------------------------------------- */
 
 #workspaces button.empty {
-    color: @surface2;
-    font-family: JetBrainsMono Nerd Font;
+  color: @surface2;
+  font-family: JetBrainsMono Nerd Font;
 }
 
 #workspaces {
-    margin: 0px 1px 0px 1px;
-    padding: 0px 1px;
-    font-family: JetBrainsMono Nerd Font;
+  margin: 0px 1px 0px 1px;
+  padding: 0px 1px;
+  font-family: JetBrainsMono Nerd Font;
 }
 
 #workspaces button {
-    padding: 0px 5px;
-    margin: 4px 5px;
-    color: @yellow;
-    font-family: JetBrainsMono Nerd Font;
+  padding: 0px 5px;
+  margin: 4px 5px;
+  color: @yellow;
+  font-family: JetBrainsMono Nerd Font;
 }
 
 #workspaces button:hover {
-    opacity:0.5;
+  opacity: 0.5;
 }
 
 /* ------ Pulseaudio ------ */
@@ -132,8 +156,7 @@ window#waybar {
   margin: 4px 2px;
 }
 
-
 tooltip {
-    background: @base;
-    border: 1px solid @blue;
+  background: @base;
+  border: 1px solid @blue;
 }
