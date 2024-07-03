@@ -6,6 +6,7 @@
 # ███████╗███████╗███████╗██║░╚███║╚██████╔╝██╔╝╚██╗  ███████╗██████╔╝██║░░██║
 # ╚══════╝╚══════╝╚══════╝╚═╝░░╚══╝░╚═════╝░╚═╝░░╚═╝  ╚══════╝╚═════╝░╚═╝░░╚═╝
 
+### AUTOSTART
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -15,6 +16,8 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 
 eval "$(zoxide init --cmd cd zsh)"
+
+
 
 ### ALIASES
 # scripts

@@ -41,6 +41,7 @@ return {
             newfile_status = false,
             path = 0, -- 0: Just the filename
 
+            separator = {},
             shorting_target = 40,
             symbols = {
                 modified = "  ",
@@ -48,7 +49,7 @@ return {
                 unnamed = "[No Name]",
                 newfile = "[New]",
             },
-            padding = { right = 2 },
+            padding = { right = 0 },
         }
 
         local harpoonline = require("harpoonline")
@@ -65,6 +66,12 @@ return {
                 },
             },
         })
+
+        local progress = {
+            "progress",
+            separator = {},
+            padding = {left = 2, right = 2},
+        }
 
         require("lualine").setup({
             options = {
@@ -89,7 +96,7 @@ return {
                 lualine_a = { mode },
                 lualine_b = { "branch", diff, "diagnostics" },
                 lualine_c = {},
-                lualine_x = { filetype, filename },
+                lualine_x = { filetype, filename, progress},
                 lualine_y = { harpoonline.format },
                 lualine_z = { location },
             },

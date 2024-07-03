@@ -34,6 +34,7 @@ return {
 				"marksman",
 				"tsserver",
                 "emmet_ls",
+                "sqls",
 			},
 		})
 
