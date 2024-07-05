@@ -33,7 +33,6 @@ return {
 				"bashls",
 				"marksman",
 				"tsserver",
-                "emmet_ls",
                 "sqls",
 			},
 		})
