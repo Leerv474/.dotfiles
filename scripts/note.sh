@@ -34,8 +34,15 @@ fi
 if [ "$1" = '-r' ]; then
     selected_file=$(fd --search-path "${NOTEPATH}" --type f | fzf)
     if [ $? -eq 0 ] && [ -n "$selected_file" ]; then
-        rm "$selected_file"
-        echo -e "${BLUE}info:${NORMAL} note ${selected_file} removed"
+        echo -e "Are you sure you want to delete ${selected_file}? (Y/n): "
+        read confirm
+        if [[ "$confirm" = 'y' || "$confirm" = 'Y' || "$confirm" = '' ]]; then
+            rm "$selected_file"
+            echo -e "${BLUE}info:${NORMAL} note ${selected_file} removed"
+        else
+            echo -e "${BLUE}info:${NORMAL} action cancelled"
+            exit 0
+        fi  
     else
         echo -e "${BLUE}info:${NORMAL} no file selected" 
     fi

@@ -45,11 +45,5 @@ return {
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end, { desc = "Find string" })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-        vim.keymap.set(
-            "n",
-            "<leader>td",
-            ":TodoTelescope<CR>",
-            { desc = "Find TODO comments", noremap = true, silent = true }
-        )
     end,
 }

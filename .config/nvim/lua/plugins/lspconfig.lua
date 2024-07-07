@@ -66,6 +66,25 @@ return {
                     },
                 })
             end,
+            ["emmet_ls"] = function()
+                lspconfig["emmet_ls"].setup({
+                    -- on_attach = on_attach,
+                    capabilities = capabilities,
+                    filetypes = {
+                        "javascript",
+                        "javascriptreact",
+                        "typescriptreact",
+                    },
+                    init_options = {
+                        html = {
+                            options = {
+                                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                                ["bem.enabled"] = true,
+                            },
+                        },
+                    },
+                })
+            end,
         })
     end,
 }

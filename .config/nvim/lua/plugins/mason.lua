@@ -1,41 +1,41 @@
 return {
-	"williamboman/mason.nvim",
-	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
-        'WhoIsSethDaniel/mason-tool-installer.nvim'
-	},
+    "williamboman/mason.nvim",
+    dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
 
-	config = function()
-		local mason = require("mason")
-		local mason_config = require("mason-lspconfig")
+    config = function()
+        local mason = require("mason")
+        local mason_config = require("mason-lspconfig")
         local mason_installer = require("mason-tool-installer")
 
-		mason.setup({
-			ui = {
-				icons = {
-					package_installed = "󰄳",
-					package_pending = "",
-					package_uninstalled = "",
-				},
-			},
-		})
+        mason.setup({
+            ui = {
+                icons = {
+                    package_installed = "󰄳",
+                    package_pending = "",
+                    package_uninstalled = "",
+                },
+            },
+        })
 
-		mason_config.setup({
-			ensure_installed = {
-				"cmake",
-				"clangd",
-				"pyright",
-				"lua_ls",
-				"jdtls",
-				"cssls",
-				"lemminx",
-				"jsonls",
-				"bashls",
-				"marksman",
-				"tsserver",
+        mason_config.setup({
+            ensure_installed = {
+                "cmake",
+                "clangd",
+                "pyright",
+                "lua_ls",
+                "jdtls",
+                "cssls",
+                "lemminx",
+                "jsonls",
+                "bashls",
+                "marksman",
+                "tsserver",
                 "sqls",
-			},
-		})
+            },
+        })
 
         mason_installer.setup({
             ensure_installer = {
@@ -51,7 +51,7 @@ return {
                 "checkstyle",
                 "pylint",
                 "luacheck",
-            }
+            },
         })
-	end,
+    end,
 }
