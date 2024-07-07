@@ -21,9 +21,9 @@ return {
 
         vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, { desc = "smart rename", silent = true })
 
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "go to previous diagnostic", silent = true })
+        vim.keymap.set("n", "<leader>[d", vim.diagnostic.goto_prev, { desc = "go to previous diagnostic", silent = true })
 
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "go to next diagnostic", silent = true })
+        vim.keymap.set("n", "<leader>]d", vim.diagnostic.goto_next, { desc = "go to next diagnostic", silent = true })
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "show information under the cursor", silent = true })
 

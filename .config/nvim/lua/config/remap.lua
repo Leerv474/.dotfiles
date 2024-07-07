@@ -31,3 +31,16 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
+vim.keymap.set("v", "'", [[c'<C-r>"'<Esc>]], { desc = "Surround selection with '" })
+vim.keymap.set("v", '"', [[c"<C-r>""<Esc>]], { desc = 'Surround selection with "' })
+vim.keymap.set("v", '*', [[c*<C-r>"*<Esc>]], { desc = "Surround selection with *" })
+vim.keymap.set("v", '`', [[c`<c-r>"`<esc>]], { desc = "surround selection with `" })
+
+vim.keymap.set("v", '(', [[c(<c-r>")<esc>]], { desc = "surround selection with ()" })
+vim.keymap.set("v", ')', [[c(<c-r>")<esc>]], { desc = "surround selection with ()" })
+
+vim.keymap.set("v", '{', [[c{<c-r>"}<esc>]], { desc = "surround selection with {}" })
+vim.keymap.set("v", '}', [[c{<c-r>"}<esc>]], { desc = "surround selection with {}" })
+
+vim.keymap.set("v", '<', [[c<<c-r>"><esc>]], { desc = "surround selection with <>" })
+vim.keymap.set("v", '>', [[c<<c-r>"><esc>]], { desc = "surround selection with <>" })
