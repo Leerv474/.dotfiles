@@ -2,7 +2,7 @@ vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver30,r-cr-o:hor20"
 
 -- netrw
 vim.g.netrw_localcopydircmd = "cp -r"
-
+vim.g.netrw_banner = false;
 --
 vim.opt.backspace = "indent,eol,start"
 vim.opt.clipboard:append("unnamedplus")
@@ -31,7 +31,7 @@ vim.opt.cmdheight = 1
 
 vim.wo.cursorline = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
