@@ -10,7 +10,7 @@
         "clock"
     ],
     "modules-center": [
-        "hyprland/workspaces",
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "backlight",
@@ -32,7 +32,7 @@
                 "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
                 "today": "<span color='#f38ba8'><b>{}</b></span>"
             }
-        },
+        }
     },
     "hyprland/workspaces": {
         "on-click": "activate",
@@ -55,7 +55,7 @@
             "󰃟",
             "󰃠"
         ],
-        "tooltip": false,
+        "tooltip": false
     },
     "pulseaudio": {
         "format": "{icon} <b>{volume}%</b>",
@@ -68,19 +68,25 @@
                 "󰕿",
                 "󰖀",
                 "󰕾"
-            ],
+            ]
         },
         "tooltip": false,
-        "on-click": "pavucontrol",
+        "on-click": "pavucontrol"
     },
     "network": {
         "interval": 30,
-        "format-wifi": "󰤨 {essid}",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "format-wifi": "{icon} {essid}",
         "format-ethernet": "󰈀",
-        "fomat-disconnected": "󱚵",
+        "fomat-disconnected": "󰤯",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disconnected": "Disconnected"
     },
     "battery": {
         "states": {
@@ -98,21 +104,23 @@
         ],
         "max-length": 25,
         "tooltip": false,
+        "format-charging": "{icon}󱐋{capacity}%",
+        "interval": 5
     },
     "tray": {
         "icon-size": 20,
-        "spacing": 10,
+        "spacing": 10
     },
     "custom/separator-space": {
         "format": " ",
-        "tooltip": false,
+        "tooltip": false
     },
     "custom/separator-gap": {
         "format": "  ",
-        "tooltip": false,
+        "tooltip": false
     },
     "custom/separator-arrow": {
         "format": "  ",
-        "tooltip": false,
-    },
+        "tooltip": false
+    }
 }
