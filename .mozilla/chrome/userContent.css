@@ -11,7 +11,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: #303446 no-repeat url("./img/deserted-landscape.jpg") center;
+    background: #303446 no-repeat url("./img/background.png") center;
     background-size: cover;
     width: 100vw;
     height: 100vh;
