@@ -5,6 +5,7 @@
 # ██║░░░░░██╔══╝░░██╔══╝░░██║╚████║██║░░░██║░██╔██╗░  ██╔══╝░░░╚═══██╗██╔══██║
 # ███████╗███████╗███████╗██║░╚███║╚██████╔╝██╔╝╚██╗  ███████╗██████╔╝██║░░██║
 # ╚══════╝╚══════╝╚══════╝╚═╝░░╚══╝░╚═════╝░╚═╝░░╚═╝  ╚══════╝╚═════╝░╚═╝░░╚═╝
+#
 
 ### AUTOSTART
 autoload -Uz compinit promptinit
@@ -18,7 +19,6 @@ export EDITOR=nvim
 eval "$(zoxide init --cmd cd zsh)"
 
 
-
 ### ALIASES
 # scripts
 alias psd="${HOME}/.dotfiles/scripts/psd.sh"
@@ -26,6 +26,7 @@ alias trash="${HOME}/.dotfiles/scripts/trash.sh"
 alias quick-git="${HOME}/.dotfiles/scripts/quick-git.sh"
 alias dupterm="${HOME}/.dotfiles/scripts/dupterm.sh"
 alias note="${HOME}/.dotfiles/scripts/note.sh"
+alias open="${HOME}/.dotfiles/scripts/open.sh"
 
 ### INFO: for freeglut
 glut-compile() {
@@ -53,33 +54,9 @@ alias сы='cd'
 # file management
 alias mkf='touch'
 
-open() {
-    xdg-open $1 &
-}
-
-nvimcd() {
-    if [ -n "$1" ]; then
-        if [ -d "$1" ]; then
-            cd "$1" || exit 
-            nvim .
-        elif [ -f "$1" ]; then
-            nvim "$1"
-        else
-            nvim "$1"
-        fi
-    else
-        nvim .
-    fi
-}
-
 alias vim="nvim"
 alias nv="nvim"
 alias v="nvim"
-
-cdmkdir() {
-    mkdir "$1"
-    cd "$1" || exit
-}
 
 # system management
 alias :q="exit"
@@ -91,6 +68,7 @@ alias cat='bat -p'
 alias lg='lazygit'
 alias py='python'
 alias log-out="hyprctl dispatch exit"
+alias psql="psql -U postgres"
 
 mkhtml() {
     mkdir -p $1/css

@@ -1,6 +1,6 @@
 return {
     "OXY2DEV/markview.nvim",
-    ft = "markdown",
+    lazy = false,
     dependencies = {
         -- You may not need this if you don't lazy load
         -- Or if the parsers are in your $RUNTIMEPATH

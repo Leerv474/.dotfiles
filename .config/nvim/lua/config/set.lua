@@ -49,6 +49,9 @@ vim.opt.updatetime = 50
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- so there is no fucking folding
+vim.opt.foldenable = false;
+
 -- change diagnostic signs
 vim.cmd([[ 
     sign define DiagnosticSignError text=  linehl= texthl=DiagnosticSignError numhl= 
