@@ -2,4 +2,4 @@
 
 DIR=$(pwd)
 
-kitty $DIR &
+kitty $DIR > /dev/null 2>&1 &
