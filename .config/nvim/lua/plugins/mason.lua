@@ -32,7 +32,7 @@ return {
                 "jsonls",
                 "bashls",
                 "marksman",
-                "tsserver",
+                "ts_ls",
                 "sqls",
             },
         })

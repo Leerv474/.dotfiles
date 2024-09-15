@@ -1,14 +1,18 @@
 " --- SET
 set scrolloff=8
+set sidescrolloff=5
 set incsearch
 set number
 set relativenumber
 set ignorecase
 set smartcase
-set NERDTree
+set surround
 set splitright
 set splitbelow
 set clipboard+=unnamedplus
+set commentary
+set keep-english-in-normal-and-restore-in-insert
+set NERDTree
 
 imap <C-;> <ESC>
 
@@ -17,8 +21,11 @@ nmap <leader>sv :vsplit<CR>
 nmap <leader>sh :split<CR>
 nmap <leader>sx :close<CR>
 
+let g:argtextobj_pairs="[:],(:),<:>"
 
 " --- REMAPS
+map <leader>g] <Action>(GotoNextError)
+map <leader>g] <Action>(GotoPreviousError)
 " Moving indent as much as you want
 vmap < <gv
 vmap > >gv
@@ -36,13 +43,13 @@ xmap p \"_dP
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-nmap <C-k> :wincmd k<CR>
-nmap <C-j> :wincmd j<CR>
-nmap <C-h> :wincmd h<CR>
-nmap <C-l> :wincmd l<CR>
+nmap <C-h> <C-w>h  
+nmap <C-j> <C-w>j 
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " --- IDEA REMAPS
-map <leader>rr <Action>(RenameElement)
+nmap <leader>rr <Action>(RenameElement)
 nmap <leader>fu :action FindUsages<cr>
 nmap <leader>gc :action GotoClass<cr>
 nmap <leader>gi :action GotoImplementation<cr>
@@ -52,12 +59,18 @@ nmap <leader>bn :action NextTab<CR>
 nmap <leader>bw :action CloseEditor<CR>
 nmap <leader>fs :action FindInPath<CR>
 nmap <leader>ff :action SearchEverywhere<CR>
-map <leader>pv :NERDTree<CR>
 nmap <leader>nf :action NewFile<CR>
 nmap <leader>gf :action ReformatCode<CR>
 
+nmap <leader>bp :action PreviousTab<CR>
+nmap <leader>bn :action NextTab<CR>
+
+nnoremap <leader>nc :action NewClass<CR>
+nnoremap <leader>pv :NERDTree <CR>
+nnoremap ]] :action MethodDown<CR>
+nnoremap [[ :action MethodUp<CR>
+nnoremap <leader>pv :NERDTree<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
-Plug 'tpope/vim-commentary'
 

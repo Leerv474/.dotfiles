@@ -31,4 +31,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 require("config.set")
 require("config.remap")
+require("config.appearance")
 require("lazy").setup("plugins")

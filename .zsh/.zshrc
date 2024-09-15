@@ -18,7 +18,6 @@ export EDITOR=nvim
 
 eval "$(zoxide init --cmd cd zsh)"
 
-
 ### ALIASES
 # scripts
 alias psd="${HOME}/.dotfiles/scripts/psd.sh"
@@ -45,11 +44,11 @@ alias projects="cd ~/Documents/projects && la"
 alias practice="cd ~/Documents/practice && la"
 
 # directory management
-alias la='ls -lahq --color=auto --no-group'
-alias ls='ls -lhq --color=auto --no-group'
+alias la='ls -ahq --color=auto --no-group'
+alias ls='ls -hq --color=auto --no-group'
 alias ..='cd ..'
 alias ~='cd ~'
-alias сы='cd'
+alias св='cd'
 
 # file management
 alias mkf='touch'

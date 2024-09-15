@@ -1,7 +1,7 @@
 /* S E T T I N G S */
 
 :root {
-  --navbarWidth: 500px; /* Set width of navbar. Use px for a fixed width 
+  --navbarWidth: 550px; /* Set width of navbar. Use px for a fixed width 
                                 or vw for a percentage of your window. */
   --animationSpeed: 0.3s;
 }
@@ -69,8 +69,8 @@
 /* Oneline tweak */
 
 #nav-bar {
-  margin-left: calc(100vw - var(--navbarWidth)) !important;
-  right: 0;
+  width: var(--navbarWidth);
+  margin-left: auto;
 }
 #TabsToolbar {
   width: calc(100vw - var(--navbarWidth)) !important;

@@ -1,0 +1,35 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.7
+#
+
+## INFO: VOLUME CONTROL
+#
+# Use XF86AudioMute to mute volume
+"${HOME}/.dotfiles/scripts/volume.sh mute"
+    XF86AudioMute
+
+# Use XF86AudioRaiseVolume to raise volume
+"${HOME}/.dotfiles/scripts/volume.sh raise"
+    XF86AudioRaiseVolume
+
+# Use XF86AudioLowerVolume to lower volume
+"${HOME}/.dotfiles/scripts/volume.sh lower"
+    XF86AudioLowerVolume
+
+## INFO: BRIGHTNESS CONTROL
+"~/.dotfiles/scripts/brightness.sh +"
+    XF86MonBrightnessUp
+
+"~/.dotfiles/scripts/brightness.sh -"
+    XF86MonBrightnessDown
+
+## INFO: SCREENSHOTS
+"flameshot gui"
+    Control + Shift + s
+##################################
+# End of xbindkeys configuration #
+##################################
