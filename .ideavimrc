@@ -11,6 +11,7 @@ set splitright
 set splitbelow
 set clipboard+=unnamedplus
 set commentary
+set keep-english-in-normal
 set keep-english-in-normal-and-restore-in-insert
 set NERDTree
 
@@ -71,6 +72,14 @@ nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
 nnoremap <leader>pv :NERDTree<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
-" Highlight copied text
+
+
+nmap <leader>a :action AddToHarpoon<CR>
+nmap <leader>1 :action GotoHarpoon1<CR>
+nmap <leader>2 :action GotoHarpoon2<CR>
+nmap <leader>3 :action GotoHarpoon3<CR>
+nmap <leader>4 :action GotoHarpoon4<CR>
+nmap <leader>5 :action GotoHarpoon5<CR>
+nmap <C-e> :action ShowHarpoon<CR>t
 Plug 'machakann/vim-highlightedyank'
 

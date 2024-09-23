@@ -3,6 +3,10 @@ return {
     event = { "BufReadPre", "BufNewFile" },
 
     config = function()
-        require("autoclose").setup({})
+        require("autoclose").setup({
+            options = {
+                disabled_filetypes = { "text", "markdown" },
+            },
+        })
     end,
 }

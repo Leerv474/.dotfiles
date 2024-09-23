@@ -26,22 +26,20 @@ alias quick-git="${HOME}/.dotfiles/scripts/quick-git.sh"
 alias dupterm="${HOME}/.dotfiles/scripts/dupterm.sh"
 alias note="${HOME}/.dotfiles/scripts/note.sh"
 alias open="${HOME}/.dotfiles/scripts/open.sh"
-
-### INFO: for freeglut
-glut-compile() {
-    g++ "$1" -o "$2" -lGL -lGLU -lglut -lstdc++
-}
+alias gametime="${HOME}/.dotfiles/scripts/gametime.sh"
+alias todo="${HOME}/.dotfiles/scripts/todo.sh"
+todo
 
 # directories
-alias bmstu="cd ~/Documents/bmstu && la"
-alias downloads="cd ~/Downloads && la"
-alias docs="cd ~/Documents && la"
-alias javacourse="cd ~/Documents/LeeRV-JAVA314 && la"
-alias config="cd ~/.config && la"
+alias bmstu="cd ~/Documents/bmstu"
+alias downloads="cd ~/Downloads"
+alias docs="cd ~/Documents"
+alias javacourse="cd ~/Documents/LeeRV-JAVA314"
+alias config="cd ~/.config"
 alias home="cd ~"
-alias dotfiles="cd ~/.dotfiles && la"
-alias projects="cd ~/Documents/projects && la"
-alias practice="cd ~/Documents/practice && la"
+alias dotfiles="cd ~/.dotfiles"
+alias projects="cd ~/Documents/projects"
+alias practice="cd ~/Documents/practice"
 
 # directory management
 alias la='ls -ahq --color=auto --no-group'
@@ -98,6 +96,12 @@ setopt interactive_comments
 # ctrl backspace
 bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
+
+# la after each cd
+function chpwd() {
+    emulate -L zsh
+    ls -a
+}
 
 stty stop undef
 zle_highlight=('paste:none')
