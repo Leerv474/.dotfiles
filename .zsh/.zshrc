@@ -49,8 +49,6 @@ alias ~='cd ~'
 alias св='cd'
 
 # file management
-alias mkf='touch'
-
 alias vim="nvim"
 alias nv="nvim"
 alias v="nvim"
@@ -66,6 +64,10 @@ alias lg='lazygit'
 alias py='python'
 alias log-out="hyprctl dispatch exit"
 alias psql="psql -U postgres"
+
+usb() {
+    sudo mount -o gid=users,fmask=113,dmask=002 $1 ~/media/usb
+}
 
 mkhtml() {
     mkdir -p $1/css
@@ -95,7 +97,6 @@ setopt interactive_comments
 
 # ctrl backspace
 bindkey '^H' backward-kill-word
-bindkey '5~' kill-word
 
 # la after each cd
 function chpwd() {
