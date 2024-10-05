@@ -29,6 +29,7 @@ alias open="${HOME}/.dotfiles/scripts/open.sh"
 alias gametime="${HOME}/.dotfiles/scripts/gametime.sh"
 alias todo="${HOME}/.dotfiles/scripts/todo.sh"
 todo
+alias translate="${HOME}/.dotfiles/scripts/translate.sh"
 
 # directories
 alias bmstu="cd ~/Documents/bmstu"
