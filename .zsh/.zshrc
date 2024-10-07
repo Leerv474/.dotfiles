@@ -26,7 +26,6 @@ alias quick-git="${HOME}/.dotfiles/scripts/quick-git.sh"
 alias dupterm="${HOME}/.dotfiles/scripts/dupterm.sh"
 alias note="${HOME}/.dotfiles/scripts/note.sh"
 alias open="${HOME}/.dotfiles/scripts/open.sh"
-alias gametime="${HOME}/.dotfiles/scripts/gametime.sh"
 alias todo="${HOME}/.dotfiles/scripts/todo.sh"
 todo
 alias translate="${HOME}/.dotfiles/scripts/translate.sh"
