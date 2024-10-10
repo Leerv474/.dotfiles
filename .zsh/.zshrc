@@ -63,7 +63,6 @@ alias cat='bat -p'
 alias lg='lazygit'
 alias py='python'
 alias log-out="hyprctl dispatch exit"
-alias psql="psql -U postgres"
 
 usb() {
     sudo mount -o gid=users,fmask=113,dmask=002 $1 ~/media/usb
