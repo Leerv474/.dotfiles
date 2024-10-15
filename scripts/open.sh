@@ -1,2 +1,2 @@
 #/bin/sh
-xdg-open $1 &
+xdg-open "$1" &

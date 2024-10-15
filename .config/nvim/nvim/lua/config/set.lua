@@ -21,8 +21,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- -- enable if not using tabset.nvim
--- vim.opt.tabstop = 4
--- vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -56,3 +56,4 @@ vim.opt.splitbelow = true
 vim.opt.foldenable = false;
 
 vim.g.omni_sql_no_default_maps = 1
+

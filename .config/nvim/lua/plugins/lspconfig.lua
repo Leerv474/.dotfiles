@@ -10,7 +10,7 @@ return {
     config = function()
         local opts = { noremap = true, silent = true }
         -- Basic diagnostic mappings, these will navigate to or display diagnostics
-        vim.keymap.set("n", "<space>d", vim.diagnostic.open_float, opts)
+        vim.keymap.set("n", "<leader>dl", vim.diagnostic.open_float, opts)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
         vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts) -- set keybinds
@@ -18,15 +18,15 @@ return {
         local on_attach = function(client, bufnr)
             -- Mappings to magical LSP functions!
             local bufopts = { noremap = true, silent = true, buffer = bufnr }
-            vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, bufopts)
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, bufopts)
+            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
             vim.keymap.set("n", "gk", vim.lsp.buf.hover, bufopts)
-            vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, bufopts)
+            vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
             vim.keymap.set("n", "K", vim.lsp.buf.signature_help, bufopts)
             vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
             vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, bufopts)
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
-            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, bufopts)
+            vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
         end
 
         local lspconfig = require("lspconfig")

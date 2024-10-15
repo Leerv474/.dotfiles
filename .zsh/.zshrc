@@ -100,7 +100,7 @@ bindkey '^H' backward-kill-word
 # la after each cd
 function chpwd() {
     emulate -L zsh
-    ls -a
+    ls
 }
 
 stty stop undef

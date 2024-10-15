@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: "Overpass", "AgaveNerdFontPropo";
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* ------ Set a Uniform Border Radius ------ */
@@ -32,7 +32,7 @@
 .modules-left {
   background-color: @base;
   padding-right: 5px;
-  padding-left: 5px;
+  padding-left: 13px;
 }
 
 /* ------ Modules Center ------ */
@@ -55,7 +55,7 @@
 #memory {
   background-color: @surface1;
   padding: 2px 5px;
-  margin: 2px 2px;
+  margin: 4px 2px;
 }
 
 #cpu {
@@ -100,7 +100,7 @@ window#waybar {
 
 #workspaces button {
   padding: 0px 5px;
-  margin: 2px 5px;
+  margin: 4px 5px;
   color: @yellow;
   font-family: JetBrainsMono Nerd Font;
 }
@@ -114,7 +114,7 @@ window#waybar {
   color: @peach;
   background-color: @surface;
   padding: 2px 5px;
-  margin: 2px 2px;
+  margin: 4px 2px;
 }
 
 /* ------ Backlight ------ */
@@ -122,7 +122,7 @@ window#waybar {
   color: @sky;
   background-color: @surface;
   padding: 2px 5px;
-  margin: 2px 2px;
+  margin: 4px 2px;
 }
 
 /* ------ Network ------ */
@@ -130,7 +130,7 @@ window#waybar {
   color: @mauve;
   background-color: @surface;
   padding: 2px 5px;
-  margin: 2px 2px;
+  margin: 4px 2px;
 }
 
 /* ------ Battery ------ */
@@ -138,7 +138,7 @@ window#waybar {
   color: @maroon;
   background-color: @surface;
   padding: 2px 5px;
-  margin: 2px 2px;
+  margin: 4px 2px;
 }
 
 /* ------ Clock ------ */
@@ -153,7 +153,7 @@ window#waybar {
 #tray {
   background-color: @surface;
   padding: 2px 5px;
-  margin: 2px 2px;
+  margin: 4px 2px;
 }
 
 tooltip {
