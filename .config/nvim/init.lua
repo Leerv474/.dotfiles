@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields, undefined-global
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -10,6 +11,16 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
+
+local opts = {
+    change_detection = {
+        notify = false
+    },
+    cheker = {
+        enabled = true,
+        notify = false
+    }
+}
 
 vim.g.mapleader = " "
 local function change_dir_from_argv()
@@ -30,6 +41,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
     callback = change_dir_from_argv
 })
 require("config.set")
+require("config.autocmds")
 require("config.remap")
 require("config.appearance")
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", opts)
+

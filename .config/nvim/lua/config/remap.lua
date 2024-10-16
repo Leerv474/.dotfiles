@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set({ "i", "v" }, "<C-;>", "<ESC>", { desc = "exit insert mode" })
 -- split screen
 vim.keymap.set("n", "<leader>sv", vim.cmd.vsplit, { desc = "split vertically" })
 vim.keymap.set("n", "<leader>sh", vim.cmd.split, { desc = "split horizontally" })
@@ -44,3 +43,4 @@ vim.keymap.set("v", '}', [[c{<c-r>"}<esc>]], { desc = "surround selection with {
 
 vim.keymap.set("v", '<', [[c<<c-r>"><esc>]], { desc = "surround selection with <>" })
 vim.keymap.set("v", '>', [[c<<c-r>"><esc>]], { desc = "surround selection with <>" })
+

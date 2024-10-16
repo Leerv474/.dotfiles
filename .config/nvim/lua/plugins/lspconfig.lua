@@ -1,130 +1,138 @@
+---@diagnostic disable: missing-fields, undefined-global
 return {
-    -- LSP Support
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
-        { "antosha417/nvim-lsp-file-operations", config = true },
-        { "folke/neodev.nvim", opts = {} },
+    {
+        "williamboman/mason.nvim",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+
+        config = function()
+            local mason = require("mason")
+            local mason_config = require("mason-lspconfig")
+            local mason_installer = require("mason-tool-installer")
+
+            mason.setup({
+                ui = {
+                    icons = {
+                        package_installed = "󰄳",
+                        package_pending = "",
+                        package_uninstalled = "",
+                    }, },
+            })
+
+            mason_config.setup({
+                ensure_installed = {
+                    "cmake",
+                    "clangd",
+                    "pyright",
+                    "lua_ls",
+                    "jdtls",
+                    "cssls",
+                    "lemminx",
+                    "jsonls",
+                    "bashls",
+                    "marksman",
+                    "ts_ls",
+                    "sqls",
+                },
+            })
+
+            mason_installer.setup({
+                ensure_installer = {
+                    "prettier",
+                    "stylua",
+                    "isort",
+                    "black",
+                    "clang-format",
+                    "beautysh",
+                    -- linters
+                    "cpplint",
+                    "eslint_d",
+                    "checkstyle",
+                    "pylint",
+                    "luacheck",
+                },
+            })
+        end,
     },
-    config = function()
-        local opts = { noremap = true, silent = true }
-        -- Basic diagnostic mappings, these will navigate to or display diagnostics
-        vim.keymap.set("n", "<leader>dl", vim.diagnostic.open_float, opts)
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-        vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts) -- set keybinds
+    {
+        "jay-babu/mason-nvim-dap.nvim",
 
-        local on_attach = function(client, bufnr)
-            -- Mappings to magical LSP functions!
-            local bufopts = { noremap = true, silent = true, buffer = bufnr }
-            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-            vim.keymap.set("n", "gk", vim.lsp.buf.hover, bufopts)
-            vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-            vim.keymap.set("n", "K", vim.lsp.buf.signature_help, bufopts)
-            vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
-            vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, bufopts)
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
-            vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+        config = function()
+            local mason_dap = require("mason-nvim-dap")
+            mason_dap.setup({
+                ensure_installed = {
+                    "java-debug-adapter",
+                    "java-test",
+                },
+            })
         end
+    },
+    {
+        "mfussenegger/nvim-jdtls",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        }
+    },
 
-        local lspconfig = require("lspconfig")
-        local mason_lspconfig = require("mason-lspconfig")
-        local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    {
+        "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            local lspconfig = require("lspconfig")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-        local capabilities = cmp_nvim_lsp.default_capabilities()
-        capabilities.textDocument.completion.completionItem.snippetSupport = true
+            lspconfig.cmake.setup({
+                capabilities = capabilities
+            })
+            lspconfig.clangd.setup({
+                capabilities = capabilities
+            })
+            lspconfig.pyright.setup({
+                capabilities = capabilities
+            })
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.cssls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.lemminx.setup({
+                capabilities = capabilities
+            })
+            lspconfig.jsonls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.bashls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.marksman.setup({
+                capabilities = capabilities
+            })
+            lspconfig.ts_ls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.sqls.setup({
+                capabilities = capabilities
+            })
 
-        mason_lspconfig.setup_handlers({
-            function(server_name)
-                lspconfig[server_name].setup({
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                })
-            end,
-            ["lua_ls"] = function()
-                lspconfig["lua_ls"].setup({
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                    settings = {
-                        Lua = {
-                            diagnostics = {
-                                globals = {
-                                    "vim",
-                                },
-                            },
-                            telemetry = {
-                                enable = false,
-                            },
-                        },
-                    },
-                })
-            end,
-            ["clangd"] = function()
-                lspconfig["clangd"].setup({
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                    cmd = {
-                        "clangd",
-                        "--fallback-style=webkit",
-                    },
-                })
-            end,
-            ["ts_ls"] = function()
-                lspconfig["ts_ls"].setup({
-                    on_attach = function(client, bufnr)
-                        client.server_capabilities.completionProvider = {
-                            resolveProvider = false,
-                        }
-                        on_attach(client, bufnr)
-                    end,
-                    server = vim.tbl_extend("keep", {
-                        root_dir = lspconfig.util.root_pattern("tsconfig.json", "jsconfig.json"),
-                        capabilities = capabilities,
-                        on_attach = function(client, bufnr)
-                            client.server_capabilities.documentFormattingProvider = false
-                            client.server_capabilities.documentRangeFormattingProvider = false
-                        end,
-                    }, {}),
-                })
-            end,
-            ["emmet_language_server"] = function()
-                lspconfig["emmet_language_server"].setup({
-                    filetypes = {
-                        "eruby",
-                        "javascript",
-                        "javascriptreact",
-                        "less",
-                        "sass",
-                        "scss",
-                        "pug",
-                        "typescriptreact",
-                    },
-                    -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
-                    -- **Note:** only the options listed in the table are supported.
-                    init_options = {
-                        ---@type table<string, string>
-                        includeLanguages = {},
-                        --- @type string[]
-                        excludeLanguages = {},
-                        --- @type string[]
-                        extensionsPath = {},
-                        --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
-                        preferences = {},
-                        --- @type boolean Defaults to `true`
-                        showAbbreviationSuggestions = true,
-                        --- @type "always" | "never" Defaults to `"always"`
-                        showExpandedAbbreviation = "always",
-                        --- @type boolean Defaults to `false`
-                        showSuggestionsAsSnippets = true,
-                        --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/syntax-profiles/)
-                        syntaxProfiles = {},
-                        --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
-                        variables = {},
-                    },
-                })
-            end,
-        })
-    end,
+
+            vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", {desc = "List references"})
+            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc = "Go to declaration"})
+            vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", {desc = "List definitions"})
+            vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", {desc = "List implementations"})
+            vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", {desc = "List type definitions"})
+            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {desc = "Code actions"})
+            vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, {desc = "Smart rename"})
+            vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", {desc = "Show diagnostics for file"})
+            vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, {desc = "Show diagnostics for line"})
+            vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {desc = "Jump prev diagnostic"})
+            vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {desc = "Jump next diagnostic"})
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, {desc = "Documentation under cursor"})
+
+        end,
+    },
 }
+

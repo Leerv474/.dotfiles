@@ -15,8 +15,6 @@ set keep-english-in-normal
 set keep-english-in-normal-and-restore-in-insert
 set NERDTree
 
-imap <C-;> <ESC>
-
 let mapleader=" "
 nmap <leader>sv :vsplit<CR>
 nmap <leader>sh :split<CR>
@@ -25,8 +23,6 @@ nmap <leader>sx :close<CR>
 let g:argtextobj_pairs="[:],(:),<:>"
 
 " --- REMAPS
-map <leader>g] <Action>(GotoNextError)
-map <leader>g] <Action>(GotoPreviousError)
 " Moving indent as much as you want
 vmap < <gv
 vmap > >gv
@@ -50,11 +46,13 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " --- IDEA REMAPS
+nmap <leader>]d <Action>(GotoNextError)
+nmap <leader>[d <Action>(GotoPreviousError)
 nmap <leader>rr <Action>(RenameElement)
-nmap <leader>fu :action FindUsages<cr>
-nmap <leader>gc :action GotoClass<cr>
-nmap <leader>gi :action GotoImplementation<cr>
-nmap <leader>gs :action GotoSuperMethod<cr>
+nmap gr :action FindUsages<cr>
+nmap gc :action GotoClass<cr>
+nmap gi :action GotoImplementation<cr>
+nmap gs :action GotoSuperMethod<cr>
 nmap <leader>bp :action PreviousTab<CR>
 nmap <leader>bn :action NextTab<CR>
 nmap <leader>bw :action CloseEditor<CR>
@@ -67,10 +65,9 @@ nmap <leader>bp :action PreviousTab<CR>
 nmap <leader>bn :action NextTab<CR>
 
 nnoremap <leader>nc :action NewClass<CR>
-nnoremap <leader>pv :NERDTree <CR>
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
-nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 
 
 nmap <leader>a :action AddToHarpoon<CR>

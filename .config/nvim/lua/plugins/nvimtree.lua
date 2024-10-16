@@ -1,25 +1,19 @@
----@diagnostic disable: missing-fields
 return {
-    "nvim-tree/nvim-tree.lua",
-    lazy = false,
+	"nvim-tree/nvim-tree.lua",
+	config = function()
+		vim.keymap.set("n", "<leader>e", function()
+			vim.cmd.NvimTreeToggle()
+		end, { desc = "Toggle file tree" })
 
-    config = function()
-        require("nvim-tree").setup({
-            sort = {
-                sorter = "case_sensitive",
-            },
-            view = {
-                width = 30,
-            },
-            renderer = {
-                group_empty = true,
-            },
-            filters = {
-                dotfiles = true,
-            },
-        })
-        vim.keymap.set("n", "<leader>nt", function()
-            vim.cmd.NvimTreeToggle()
-        end, {desc = "Toggle file tree"})
-    end,
+		require("nvim-tree").setup({
+			hijack_netrw = true,
+			auto_reload_on_write = true,
+			renderer = {
+				group_empty = true,
+			},
+			view = {
+				width = 40,
+			},
+		})
+	end,
 }

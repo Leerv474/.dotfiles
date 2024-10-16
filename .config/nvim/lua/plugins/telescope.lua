@@ -1,6 +1,7 @@
+
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
+    tag = "0.1.6",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons",
@@ -8,6 +9,9 @@ return {
     },
     config = function()
         local telescope = require("telescope")
+        local actions = require("telescope.actions")
+        local builtin = require("telescope.builtin")
+
         telescope.load_extension("ui-select")
         telescope.setup({
             defaults = {
@@ -33,6 +37,13 @@ return {
                     "git",
                 },
 
+                mappings = {
+                    i = {
+                        ["<C-n>"] = actions.cycle_history_next,
+                        ["<C-p>"] = actions.cycle_history_prev,
+                    },
+                },
+
                 extensions = {
                     ["ui-select"] = {
                         require("telescope.themes").get_dropdown({}),
@@ -40,7 +51,6 @@ return {
                 },
             },
         })
-        local builtin = require("telescope.builtin")
 
         vim.keymap.set("n", "<leader>ff", function()
             builtin.find_files({ hidden = true })
@@ -51,5 +61,6 @@ return {
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end, { desc = "Find string" })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
+        vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {desc = "Find diagnostics"})
     end,
 }

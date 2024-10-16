@@ -94,13 +94,16 @@ setopt nomatch
 setopt menucomplete
 setopt interactive_comments
 
-# ctrl backspace
+# ctrl+backspace to kill word
 bindkey '^H' backward-kill-word
+# unbind ctrl+t
+bindkey -r '^S'
+
 
 # la after each cd
 function chpwd() {
     emulate -L zsh
-    ls
+    ls -a
 }
 
 stty stop undef

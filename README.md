@@ -1,27 +1,37 @@
 # Personal dotfiles for system configuretion
 
-Includes:
-- Awesome WM (includes polybar, picom and rofi)
-- [neovim](https://github.com/Leerv474/.dotfiles/tree/master/.config/nvim)
-- [lf](https://github.com/Leerv474/.dotfiles/tree/master/.config/lf) (terminal file manager)
-- [kitty](https://github.com/Leerv474/.dotfiles/blob/master/.config/kitty/kitty.conf) (terminal emulator)
-- xbindkeys (for keybindings)
-- firefox (user.js and chrome folder for personalizatoin)
-- bash (pure)
-
-
-Ensure to install:
-- picom
-- polybar
-- rofi
-- ripgrep
-- brightnessctl
-- xbindkeys
+## apps
+- hyprland (hyprpaper, hypridle, hyprlock)
+- firefox (userChrome.css, userContext.css)
+- ideavimrc
+- zsh
+- fastfetch
 - btop
-- nvim
-- lf
+- bat
 - kitty
-- tmux
-- zsh / bash
-- pulse audio
-- neofetch
+- nvim
+- rofi
+- waybar
+- yazi
+- caps2esc
+- sddm
+
+## linking
+
+> ! `.dotfiles` directory has to be in the home directory
+
+keyboard-config -> /etc/interception 
+sddm: 
+- main-theme -> /usr/share/sddm/themes
+- sddm.conf -> /etc/sddm.conf
+- .ideavimrc -> ~
+- bat -> .config/bat
+- btop -> .config/btop
+- fastfetch -> .config/fastfetch
+- hypr -> .config/hypr
+- kitty -> .config/kitty
+- nvim -> .config/nvim
+- rofi -> .config/rofi
+- waybar -> .config/waybar
+- yazi -> .config/yazi
+
