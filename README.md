@@ -9,7 +9,7 @@
 - btop
 - bat
 - kitty
-- nvim
+- nvim (wl-copy)
 - rofi
 - waybar
 - yazi

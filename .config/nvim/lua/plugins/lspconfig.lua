@@ -117,6 +117,9 @@ return {
             lspconfig.sqls.setup({
                 capabilities = capabilities
             })
+            lspconfig.csharp_ls.setup({
+                capabilities = capabilities;
+            })
 
 
             vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", {desc = "List references"})
