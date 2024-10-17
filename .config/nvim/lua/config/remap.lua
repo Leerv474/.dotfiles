@@ -6,8 +6,8 @@ vim.keymap.set("n", "<leader>sh", vim.cmd.split, { desc = "split horizontally" }
 vim.keymap.set("n", "<leader>sx", vim.cmd.close, { desc = "close scplit" })
 
 -- moving indent as much as you want
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "H", "<gv")
+vim.keymap.set("v", "L", ">gv")
 
 -- moving selected text up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

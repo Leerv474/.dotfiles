@@ -11,7 +11,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 if [ -d "/usr/share/sddm/themes" ]; then
-    ln -s ~/.dotfiles/sddm/main-theme /usr/share/sddm/themes/main-theme
+    cp -r ~/.dotfiles/sddm/main /usr/share/sddm/themes/main
 fi
 ln -s ~/.dotfiles/sddm/sddm.conf /etc/sddm.conf
 
