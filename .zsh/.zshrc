@@ -17,6 +17,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"
 
 ### ALIASES
 # scripts
@@ -111,9 +112,9 @@ zle_highlight=('paste:none')
 unsetopt BEEP
 zstyle ':completion:*' menu select completer _history
 
-precmd() {
-    source ~/.dotfiles/.zsh/prompt.zsh
-}
+# precmd() {
+#     source ~/.dotfiles/.zsh/prompt.zsh
+# }
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.dotfiles/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source ~/.dotfiles/.zsh/fzf.zsh
