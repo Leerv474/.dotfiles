@@ -32,10 +32,10 @@ todo
 alias translate="${HOME}/.dotfiles/scripts/translate.sh"
 
 # directories
-alias bmstu="cd ~/Documents/bmstu"
+alias bmstu="cd ~/Documents/BMSTU"
 alias downloads="cd ~/Downloads"
 alias docs="cd ~/Documents"
-alias javacourse="cd ~/Documents/LeeRV-JAVA314"
+alias javacourse="cd ~/Documents/LeeRV-JAVA314/module-5-spring"
 alias config="cd ~/.config"
 alias home="cd ~"
 alias dotfiles="cd ~/.dotfiles"
@@ -100,12 +100,13 @@ bindkey '^H' backward-kill-word
 # unbind ctrl+t
 bindkey -r '^S'
 
+bindkey -e
 
 # la after each cd
-function chpwd() {
-    emulate -L zsh
-    ls -a
-}
+# function chpwd() {
+#     emulate -L zsh
+#     ls -a
+# }
 
 stty stop undef
 zle_highlight=('paste:none')

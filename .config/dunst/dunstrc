@@ -1,0 +1,142 @@
+[global]
+   
+    ### Display ###
+
+    # Which monitor should the notifications be displayed on.
+    monitor = 0
+
+    # Display notification on focused monitor.  Possible modes are:
+    #   mouse: follow mouse pointer
+    #   keyboard: follow window with keyboard focus
+    #   none: don't follow anything
+    #
+    # "keyboard" needs a window manager that exports the
+    # _NET_ACTIVE_WINDOW property.
+    # This should be the case for almost all modern window managers.
+    #
+    # If this option is set to mouse or keyboard, the monitor option
+    # will be ignored.
+    follow = none
+
+    ### Geometry ###
+
+    # dynamic width from 0 to 300
+    # width = (0, 300)
+    # constant width of 300
+    width = 250
+
+    # The maximum height of a single notification, excluding the frame.
+    height = 300
+
+    # Position the notification in the top right corner
+    origin = top-right
+
+    # Offset from the origin
+    offset = 10x10
+
+    # Scale factor. It is auto-detected if value is 0.
+    scale = 0
+
+    # Maximum number of notification (0 means no limit)
+    notification_limit = 20
+
+    frame_color = "#33ccff"
+    ### Text ###
+    
+    # Set font of notifications
+    font = AgaveNerdFontPropo 12
+    # Spacing between lines 
+    line-height = 0
+    # Markup parsing
+    markup = full
+    # Message format:
+    # %a - appname
+    # %s - summary
+    # %b - body
+    # %i - iconname (with path)
+    # %I - iconname (without path)
+    # %p - progress value (if set)
+    # %n - progress value no extra characters
+    # %% - literal %
+    format = "<b>%a</b>\n<i>%s</i>\n%b"
+    # Align message text horizontally
+    alignment = left 
+    # Align message text vertically
+    vertical_alignment = center
+    # Show age of message if message is older than x seconds
+    show_age_threshold = -1
+    # Split notifications into multiple lines
+    word_wrap = no
+    # If message too long, add ellipsize to...
+    ellipsize = middle
+    # Ignore newlines in notifications
+    ignore_newline = no
+    # Stack duplicate notifications
+    stack_duplicates = true
+    # Hide number of duplicate notifications
+    hide_duplicate_count = true
+    # Show indicators  for urls and actions
+    show_indicators = no
+
+    horizontal_padding = 20 
+   
+    ### Icons ###
+    
+    # Disable icons
+    icon_position = off
+
+    ### History ###
+    
+    # Length of history
+    history_length = 20
+    
+    ### Misc ###
+    
+    # Dmenu path
+    dmenu = /usr/bin/dmenu -p dunst:
+    # Browser
+    browser = /usr/bin/firefox -new-tab
+    # Always run scripts
+    always_run_script = true
+    # Title of notification
+    title = Dunst
+    # Notification class
+    class = Dunst
+    # Print notification on startup
+    startup_notification = false
+    # Dunst verbosity
+    verbosity = mesg
+    # Corner radius of dunst
+    corner_radius = 15
+    # Ignore dbus closeNotification message
+    ignore_dbusclose = false
+
+    ### Mouse ###
+
+    # Left click
+    mouse_left_click = close_current
+    # Middle click
+    mouse_middle_click = do_action
+    # Right click
+    mouse_right_click = do_action
+
+[shortcuts]
+
+    # Close one notification
+    close = ctrl+space
+    # Close all notifications
+    close_all = ctrl+shift+space
+
+[urgency_normal]
+
+    # Normal urgency notifications
+    background = "#202632"
+    foreground = "#ffffff"
+    timeout = 5
+
+[urgency_critical]
+
+    # High urgency notifications
+    background = "#ffffff"
+    foreground = "#db0101"
+    timeout = 0

@@ -20,10 +20,10 @@
 
 > ! `.dotfiles` directory has to be in the home directory
 
-- keyboard-config -> /etc/interception 
+- keyboard-config -> /etc/interception (hard links)
 - sddm: 
-    1. main-theme -> /usr/share/sddm/themes
-    2. sddm.conf -> /etc/sddm.conf
+    1. main-theme -> /usr/share/sddm/themes (copy)
+    2. sddm.conf -> /etc/sddm.conf (copy)
 - .ideavimrc -> ~
 - bat -> .config/bat
 - btop -> .config/btop

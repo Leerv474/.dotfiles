@@ -8,7 +8,7 @@ NORMAL='\033[0m'
 BLUE='\033[0;34m'
 
 if [ "$#" -eq 0 ]; then
-    selected_file=$(fd --search-path "${NOTEPATH}" --type f | fzf)
+    selected_file=$(fd --search-path "${NOTEPATH}" --type f | fzf --preview="bat --color="always" --style="plain" {}")
     if [ $? -eq 0 ]; then
         nvim "$selected_file"
     else
@@ -22,7 +22,6 @@ if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
 ${GREEN}usage:${NORMAL} note <operation>
 ${GREEN}operations:${NORMAL}
     note --help
-    note --list
     note (open note)
     note -n [filename] (new note)
     note -r (remove note)

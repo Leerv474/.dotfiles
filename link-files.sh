@@ -24,10 +24,10 @@ ln -s ~/.dotfiles/.tmux ~/.tmux
 ln -s ~/.dotfiles/.tmux/.tmux.conf ~/.tmux/.tmux.conf
 
 if [ -d "/etc/interception/udevmon.d" ]; then
-    ln -s ~/.dotfiles/keyboard-config/touchpad.yaml /etc/interception/touchpad.yaml
-    ln -s ~/.dotfiles/keyboard-config/laptop_keyboard.yaml /etc/interception/laptop_keyboard.yaml
-    ln -s ~/.dotfiles/keyboard-config/udevmon.d/laptop.yaml /etc/interception/udevmon.d/laptop.yaml
-    ln -s ~/.dotfiles/keyboard-config/udevmon.d/default.yaml /etc/interception/udevmon.d/default.yaml
+    ln ~/.dotfiles/keyboard-config/touchpad.yaml /etc/interception/touchpad.yaml
+    ln ~/.dotfiles/keyboard-config/laptop_keyboard.yaml /etc/interception/laptop_keyboard.yaml
+    ln ~/.dotfiles/keyboard-config/udevmon.d/laptop.yaml /etc/interception/udevmon.d/laptop.yaml
+    ln ~/.dotfiles/keyboard-config/udevmon.d/default.yaml /etc/interception/udevmon.d/default.yaml
 else
 
 mkdir ~/.config

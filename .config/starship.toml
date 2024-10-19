@@ -1,131 +1,88 @@
-[bun]
-format = "via [$symbol]($style)"
+add_newline = false
 
+
+[directory]
+read_only = " 󰌾"
+style = "fg:blue"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+
+## icons
+[aws]
+symbol = "  "
 [buf]
-format = "via [$symbol]($style)"
-
-[cmake]
-format = "via [$symbol]($style)"
-
-[cobol]
-format = "via [$symbol]($style)"
-
+symbol = " "
+[c]
+symbol = " "
+[conda]
+symbol = " "
 [crystal]
-format = "via [$symbol]($style)"
-
-[daml]
-format = "via [$symbol]($style)"
-
+symbol = " "
 [dart]
-format = "via [$symbol]($style)"
-
-[deno]
-format = "via [$symbol]($style)"
-
-[dotnet]
-format = "[$symbol(🎯 $tfm )]($style)"
-
+symbol = " "
+[docker_context]
+symbol = " "
 [elixir]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [elm]
-format = 'via [$symbol]($style)'
-
-[erlang]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [fennel]
-format = 'via [$symbol]($style)'
-
-[gleam]
-format = 'via [$symbol]($style)'
-
+symbol = " "
+[fossil_branch]
+symbol = " "
+[git_branch]
+symbol = " "
 [golang]
-format = 'via [$symbol]($style)'
-
-[gradle]
-format = 'via [$symbol]($style)'
-
+symbol = " "
+[guix_shell]
+symbol = " "
+[haskell]
+symbol = " "
 [haxe]
-format = 'via [$symbol]($style)'
-
-[helm]
-format = 'via [$symbol]($style)'
-
+symbol = " "
+[hg_branch]
+symbol = " "
+[hostname]
+ssh_symbol = " "
 [java]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [julia]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [kotlin]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [lua]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [meson]
-format = 'via [$symbol]($style)'
-
+symbol = "󰔷 "
 [nim]
-format = 'via [$symbol]($style)'
-
+symbol = "󰆥 "
+[nix_shell]
+symbol = " "
 [nodejs]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [ocaml]
-format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
-
-[opa]
-format = 'via [$symbol]($style)'
-
+symbol = " "
+[package]
+symbol = "󰏗 "
 [perl]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [php]
-format = 'via [$symbol]($style)'
-
-[pulumi]
-format = 'via [$symbol$stack]($style)'
-
-[purescript]
-format = 'via [$symbol]($style)'
-
+symbol = " "
+[pijul_channel]
+symbol = " "
 [python]
-format = 'via [$symbol]($style)'
-
-[quarto]
-format = 'via [$symbol]($style)'
-
-[raku]
-format = 'via [$symbol]($style)'
-
-[red]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [rlang]
-format = 'via [$symbol]($style)'
-
+symbol = "󰟔 "
 [ruby]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [rust]
-format = 'via [$symbol]($style)'
-
-[solidity]
-format = 'via [$symbol]($style)'
-
-[typst]
-format = 'via [$symbol]($style)'
-
+symbol = "󱘗 "
+[scala]
+symbol = " "
 [swift]
-format = 'via [$symbol]($style)'
-
-[vagrant]
-format = 'via [$symbol]($style)'
-
-[vlang]
-format = 'via [$symbol]($style)'
-
+symbol = " "
 [zig]
-format = 'via [$symbol]($style)'
+symbol = " "
