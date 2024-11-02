@@ -114,7 +114,7 @@ window#waybar {
   color: @peach;
   background-color: @surface;
   padding: 2px 5px;
-  margin: 2px 2px;
+  margin: 0px 2px;
 }
 
 /* ------ Backlight ------ */
