@@ -1,162 +1,79 @@
-@import "mocha.css";
-
 * {
-  padding: 0;
-  margin: 0;
-  font-family: "Overpass", "AgaveNerdFontPropo";
-  font-size: 16px;
-}
-
-/* ------ Set a Uniform Border Radius ------ */
-.modules-left,
-.modules-center,
-.modules-right,
-#cpu,
-#memory,
-#temperature,
-#pulseaudio,
-#backlight,
-#custom-spotify,
-#custom-icon,
-#custom-updates,
-#network,
-#battery,
-#tray,
-#idle_inhibitor,
-#custom-power,
-#custom-notification {
-  border-radius: 18px;
-}
-
-/* ------ Modules Left ------ */
-.modules-left {
-  background-color: @base;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-/* ------ Modules Center ------ */
-.modules-center {
-  background-color: @base;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-/* ------ Modules Right ------ */
-.modules-right {
-  background-color: @base;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-/* ------ Cpu Usage, Temperature, and Memory ------ */
-#cpu,
-#temperature,
-#memory {
-  background-color: @surface1;
-  padding: 2px 5px;
-  margin: 2px 2px;
-}
-
-#cpu {
-  color: @peach;
-}
-#memory {
-  color: @mauve;
-}
-#temperature {
-  color: @maroon;
-}
-
-/* ------ Window Title ------ */
-#window {
-  color: @text;
-  padding-right: 4px;
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono NF;
+    font-size: 14px;
+    min-height: 0;
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
-  border-bottom: 0px solid #ffffff;
-  /* color: #FFFFFF; */
-  background: transparent;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-}
-
-/* -----------------------------------------------------
- * Workspaces 
- * ----------------------------------------------------- */
-
-#workspaces button.empty {
-  color: @surface2;
-  font-family: JetBrainsMono Nerd Font;
+    background: transparent;
+    color: white;
 }
 
 #workspaces {
-  margin: 0px 1px 0px 1px;
-  padding: 0px 1px;
-  font-family: JetBrainsMono Nerd Font;
+	background-color: #1a1b26;
+	margin: 0px 5px;
+	border-radius: 5px;
+    padding-right: 5px;
+}
+#workspaces button {
+    padding: 5px 10px;
+    color: #c0caf5;
 }
 
-#workspaces button {
-  padding: 0px 5px;
-  margin: 2px 5px;
-  color: @yellow;
-  font-family: JetBrainsMono Nerd Font;
+#workspaces button.focused {
+    color: #24283b;
+    background-color: #7aa2f7;
+    border-radius: 5px;
 }
 
 #workspaces button:hover {
-  opacity: 0.5;
+	background-color: #7dcfff;
+	color: #24283b;
+	border-radius: 5px;
 }
 
-/* ------ Pulseaudio ------ */
-#pulseaudio {
-  color: @peach;
-  background-color: @surface;
-  padding: 2px 5px;
-  margin: 0px 2px;
+#tray, #backlight, #clock, #battery, #pulseaudio, #network {
+	background-color: #1a1b26;
+	padding: 5px 10px;
+	margin: 0px 0px;
+    border: 1px #3d59a1;
 }
 
-/* ------ Backlight ------ */
-#backlight {
-  color: @sky;
-  background-color: @surface;
-  padding: 2px 5px;
-  margin: 2px 2px;
-}
-
-/* ------ Network ------ */
-#network {
-  color: @mauve;
-  background-color: @surface;
-  padding: 2px 5px;
-  margin: 2px 2px;
-}
-
-/* ------ Battery ------ */
-#battery {
-  color: @maroon;
-  background-color: @surface;
-  padding: 2px 5px;
-  margin: 2px 2px;
-}
-
-/* ------ Clock ------ */
 #clock {
-  padding-left: 10px;
-  color: @text;
-  font-weight: bold;
-  font-size: 16px;
+    color: #41a6b5;
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 10px;
 }
 
-/* ------ System Tray ------ */
+#battery {
+    color: #c3e88d ;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#network {
+	color: #f7768e;
+	border-radius: 5px 0px 0px 5px;
+}
+
+#pulseaudio {
+	color: #7dcfff;
+}
+
+#backlight {
+	color: #e0af68; 
+}
+
 #tray {
-  background-color: @surface;
   padding: 2px 5px;
-  margin: 2px 2px;
-}
-
-tooltip {
-  background: @base;
-  border: 1px solid @blue;
 }

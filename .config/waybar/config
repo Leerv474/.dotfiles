@@ -1,0 +1,99 @@
+{
+    "position": "top", 
+    "margin-top": 5,
+    "margin-bottom": 0,
+    "height": 30,
+    "modules-left": [
+        "clock" 
+        ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "tray",
+        ],
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ],
+        "tooltip": false
+    },
+    "clock": {
+        "format": "<b>󰥔  {:%H:%M | 󰃭  %d/%m, %A}</b> ",
+        //"format": "{:%a}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#cdd6f4'>{}</span>",
+                "days": "<span color='#cdd6f4'>{}</span>",
+                "weeks": "<span color='#cdd6f4'>W{}</span>",
+                "weekdays": "<span color='#cdd6f4'>{}</span>",
+                "today": "<span color='#f38ba8'>{}</span>"
+            }
+        }
+    },
+    "battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15,
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "󰂄 {capacity}%",
+        	"format-plugged": "󰂄{capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "󱈑 {capacity}%",
+        	"format-icons": ["󱊡", "󱊢", "󱊣"]
+	},
+	"network": {
+        	"format-wifi": "  {essid}",
+        	"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        	"format-linked": "{ifname} (No IP) ",
+        	"format-disconnected": "󰤮 Disconnected",
+        	"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+        	"format-muted": "󰖁 Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+}
