@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # text colouring
 RED=$(tput setaf 1)
 NORMAL=$(tput sgr0)

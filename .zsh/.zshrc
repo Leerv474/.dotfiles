@@ -102,21 +102,10 @@ bindkey -r '^S'
 
 bindkey -e
 
-# la after each cd
-# function chpwd() {
-#     emulate -L zsh
-#     ls -a
-# }
-
 stty stop undef
 zle_highlight=('paste:none')
 unsetopt BEEP
 zstyle ':completion:*' menu select completer _history
 
-# precmd() {
-#     source ~/.dotfiles/.zsh/prompt.zsh
-# }
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.dotfiles/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source ~/.dotfiles/.zsh/fzf.zsh
 source <(fzf --zsh)

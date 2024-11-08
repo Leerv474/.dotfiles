@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 horizontal_line="─"
 vertical_line="│"
 left_top="╭"

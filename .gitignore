@@ -1,14 +1,4 @@
-.config/JetBrains/IdeaIC2023.3/workspace/*
-.config/JetBrains/IdeaIC2023.3/tasks/*
-.config/JetBrains/IdeaIC2023.3/options/actionSummary.xml
-.config/JetBrains/IdeaIC2023.3/options/features.usage.statistics.xml
-.config/JetBrains/IdeaIC2023.3/options/other.xml
-.config/JetBrains/IdeaIC2023.3/options/recentProjects.xml
-.config/JetBrains/IdeaIC2023.3/options/trusted-paths.xml
-.config/JetBrains/IdeaIC2023.3/options/updates.xml
-.config/JetBrains/IdeaIC2023.3/options/vim_settings_local.xml
-.config/JetBrains/IdeaIC2023.3/options/window.state.xml
-.config/JetBrains/IdeaIC2023.3/updatedBrokenPlugins.db
+.config/tmux/plugins/**
 
 # Compiled source #
 ###################

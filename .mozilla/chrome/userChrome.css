@@ -115,7 +115,7 @@
   border-radius: 5px;
   top: 0;
 
-  border: 1px solid #eba0ac !important;
+  /*border: 1px solid #eba0ac !important;*/
 }
 
 #navigator-toolbox:hover > #nav-bar,
@@ -176,3 +176,4 @@ tab[visuallyselected] .tab-background::before,
 .tab-close-button {
   transition: var(--animationSpeed) !important;
 }
+
