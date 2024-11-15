@@ -1,11 +1,8 @@
 {
-    "layer": "top",
     "position": "top",
-    "spacing": 4,
     "margin-top": 5,
     "margin-bottom": 0,
-    "margin-left": 5,
-    "margin-right": 5,
+    "height": 30,
     "modules-left": [
         "clock"
     ],
@@ -13,27 +10,12 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "backlight",
-        "pulseaudio",
         "network",
+        "pulseaudio",
+        "backlight",
         "battery",
         "tray"
     ],
-    "clock": {
-        "format": "<b>󰥔  {:%H:%M | 󰃭  %d/%m, %A}</b> ",
-        //"format": "{:%a}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "month",
-            "format": {
-                "months": "<span color='#cdd6f4'><b>{}</b></span>",
-                "days": "<span color='#cdd6f4'><b>{}</b></span>",
-                "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
-                "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
-                "today": "<span color='#f38ba8'><b>{}</b></span>"
-            }
-        }
-    },
     "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
@@ -55,7 +37,7 @@
         }
     },
     "backlight": {
-        "format": "{icon} <b>{percent}%</b>",
+        "format": "{icon} {percent}%",
         "format-icons": [
             "󰃞",
             "󰃟",
@@ -63,36 +45,20 @@
         ],
         "tooltip": false
     },
-    "pulseaudio": {
-        "format": "{icon} <b>{volume}%</b>",
-        "format-bluetooth": "{icon}  <b>{volume}%</b>",
-        "format-bluetooth-muted": "󰝟 ",
-        "format-muted": " 󰝟 ",
-        "format-icons": {
-            "headset": "",
-            "default": [
-                "󰕿",
-                "󰖀",
-                "󰕾"
-            ]
-        },
-        "tooltip": false,
-        "on-click": "pavucontrol"
-    },
-    "network": {
-        "interval": 30,
-        "format-icons": [
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨"
-        ],
-        "format-wifi": "{icon} {essid}",
-        "format-ethernet": "󰈀",
-        "fomart-disconnected": "󰤯",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected"
+    "clock": {
+        "format": "<b>󰥔  {:%H:%M | 󰃭  %d/%m, %A}</b> ",
+        //"format": "{:%a}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#cdd6f4'>{}</span>",
+                "days": "<span color='#cdd6f4'>{}</span>",
+                "weeks": "<span color='#cdd6f4'>W{}</span>",
+                "weekdays": "<span color='#cdd6f4'>{}</span>",
+                "today": "<span color='#f38ba8'>{}</span>"
+            }
+        }
     },
     "battery": {
         "states": {
@@ -100,33 +66,42 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄{capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-full": "󱈑 {capacity}%",
         "format-icons": [
-            "󰂎",
-            "󰁻",
-            "󰁽",
-            "󰁿",
-            "󰂁",
-            "󰁹"
-        ],
-        "max-length": 25,
-        "tooltip": false,
-        "format-charging": "{icon}󱐋{capacity}%",
-        "interval": 5
+            "󱊡",
+            "󱊢",
+            "󱊣"
+        ]
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰤮 Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰖁 Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
     },
     "tray": {
         "icon-size": 20,
         "spacing": 10
-    },
-    "custom/separator-space": {
-        "format": " ",
-        "tooltip": false
-    },
-    "custom/separator-gap": {
-        "format": "  ",
-        "tooltip": false
-    },
-    "custom/separator-arrow": {
-        "format": "  ",
-        "tooltip": false
     }
 }

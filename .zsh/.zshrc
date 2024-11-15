@@ -108,4 +108,5 @@ unsetopt BEEP
 zstyle ':completion:*' menu select completer _history
 
 source ~/.dotfiles/.zsh/fzf.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)

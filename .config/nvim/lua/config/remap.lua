@@ -5,6 +5,10 @@ vim.keymap.set("n", "<leader>sv", vim.cmd.vsplit, { desc = "split vertically" })
 vim.keymap.set("n", "<leader>sh", vim.cmd.split, { desc = "split horizontally" })
 vim.keymap.set("n", "<leader>sx", vim.cmd.close, { desc = "close scplit" })
 
+vim.keymap.set("n", "<leader>bn", vim.cmd.bnext, {desc = "next buffer"})
+vim.keymap.set("n", "<leader>bp", vim.cmd.bprevious, {desc = "next buffer"})
+vim.keymap.set("n", "<leader>bx", vim.cmd.bdelete, {desc = "next buffer"})
+
 -- moving indent as much as you want
 vim.keymap.set("v", "H", "<gv")
 vim.keymap.set("v", "L", ">gv")

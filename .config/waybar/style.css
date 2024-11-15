@@ -1,77 +1,87 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: JetBrainsMono NF;
-    font-size: 14px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: JetBrainsMono NF;
+  font-size: 14px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    color: white;
+  background: transparent;
+  color: white;
 }
 
 #workspaces {
-	background-color: #1a1b26;
-	margin: 0px 5px;
-	border-radius: 5px;
-    padding-right: 5px;
+  background-color: #1a1b26;
+  margin: 0px 5px;
+  border-radius: 5px;
+  padding-right: 5px;
 }
 #workspaces button {
-    padding: 5px 10px;
-    color: #c0caf5;
+  padding: 5px 10px;
+  color: #c0caf5;
 }
 
 #workspaces button.focused {
-    color: #24283b;
-    background-color: #7aa2f7;
-    border-radius: 5px;
+  color: #24283b;
+  background-color: #7aa2f7;
+  border-radius: 5px;
 }
 
 #workspaces button:hover {
-	background-color: #7dcfff;
-	color: #24283b;
-	border-radius: 5px;
+  background-color: #7dcfff;
+  color: #24283b;
+  border-radius: 5px;
 }
 
-#tray, #backlight, #clock, #battery, #pulseaudio, #network {
-	background-color: #1a1b26;
-	padding: 5px 10px;
-	margin: 0px 0px;
-    border: 1px #3d59a1;
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#network {
+  background-color: #1a1b26;
+  padding: 5px 10px;
+  margin: 0px 0px;
+  border: 1px #3d59a1;
 }
 
 #clock {
-    color: #41a6b5;
-    border-radius: 0px 5px 5px 0px;
-    margin-right: 10px;
+  color: #41a6b5;
+  border-radius: 0px 5px 5px 0px;
+  margin-right: 10px;
 }
 
 #battery {
-    color: #c3e88d ;
+  color: #c3e88d;
 }
 
 #battery.charging {
-    color: #9ece6a;
+  color: #9ece6a;
 }
 
 #battery.warning:not(.charging) {
-    background-color: #f7768e;
-    color: #24283b;
-    border-radius: 5px 5px 5px 5px;
+  background-color: #ffc777;
+  color: #24283b;
+  font-weight: bold;
+}
+#battery.critical:not(.charging) {
+  background-color: #f7768e;
+  color: #24283b;
+  font-weight: bold;
 }
 
 #network {
-	color: #f7768e;
-	border-radius: 5px 0px 0px 5px;
+  color: #f7768e;
+  border-radius: 5px 0px 0px 5px;
 }
 
 #pulseaudio {
-	color: #7dcfff;
+  color: #7dcfff;
 }
 
 #backlight {
-	color: #e0af68; 
+  color: #e0af68;
 }
 
 #tray {

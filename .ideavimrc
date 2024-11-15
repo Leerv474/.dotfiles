@@ -82,3 +82,9 @@ nmap <leader>ca :action ShowIntentionActions<CR>
 
 Plug 'machakann/vim-highlightedyank'
 
+
+vmap H <gv
+vmap L >gv
+
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv

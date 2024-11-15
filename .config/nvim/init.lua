@@ -26,7 +26,6 @@ vim.g.mapleader = " "
 require("config.autocmds")
 require("config.set")
 require("config.remap")
-require("config.tools")
 require("config.appearance")
 require("lazy").setup("plugins", opts)
 

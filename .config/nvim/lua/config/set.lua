@@ -14,7 +14,6 @@ vim.opt.background = "dark"
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 5
 vim.opt.signcolumn = "yes"
-vim.opt.mouse = ""
 vim.opt.isfname:append("@-@")
 
 vim.opt.number = true
