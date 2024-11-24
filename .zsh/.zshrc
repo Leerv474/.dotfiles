@@ -15,6 +15,7 @@ fastfetch
 
 export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
+export VISUAL=nvim
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
