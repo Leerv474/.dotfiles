@@ -1,0 +1,179 @@
+/* S E T T I N G S */
+
+:root {
+  --navbarWidth: 700px; /* Set width of navbar. Use px for a fixed width 
+                                or vw for a percentage of your window. */
+  --animationSpeed: 0.3s;
+}
+
+/* H I D I N G   E L E M E N T S */
+/* Comment or uncomment depending of what elements you want to hide */
+
+/*/* Back button */
+#reload-button {
+  display: none !important;
+}
+/* Hide back button only when disabled */
+#back-button[disabled="true"] {
+  display: none !important;
+}
+/* Hide forward button only when disabled */
+#forward-button[disabled="true"] {
+  display: none !important;
+}
+
+/* "Shield" icon */
+#tracking-protection-icon-container {
+  display: none !important;
+}
+
+/* This is the "Search with" indicator on the urlbar */
+#urlbar-search-mode-indicator {
+  display: none !important;
+}
+
+/*/* Zoom button */*/
+/*#urlbar-zoom-button {*/
+/*  display: none !important;*/
+/*}*/
+
+/* Page action (right three dash button) */
+#pageActionButton {
+  display: none !important;
+}
+/**/
+/* These are the buttons on the right of the urlbar */
+#page-action-buttons {
+  display: none !important;
+}
+/**/
+#urlbar-label-box {
+  display: none !important;
+}
+#stop-reload-button {
+  display: none !important;
+}
+
+/* Tab close button */
+.tab-close-button {
+  display: none !important;
+}
+
+/* Enable this to show the tab close button when hovering the tab */
+.tabbrowser-tab:hover .tab-close-button {
+  display: -moz-inline-box !important;
+}
+
+/*============================================================================*/
+
+/* Oneline tweak */
+
+#TabsToolbar {
+  width: calc(100vw);
+}
+
+#urlbar-container {
+  min-width: 0px !important;
+}
+
+:root[uidensity="compact"] #nav-bar {
+  margin-top: -37px !important;
+  height: 37px !important;
+}
+
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #nav-bar {
+  margin-top: -44px !important;
+  height: 44px !important;
+}
+
+:root[uidensity="touch"] #nav-bar {
+  margin-top: -49px !important;
+  height: 49px !important;
+}
+
+/* Dragging space */
+:root[sizemode="maximized"] #TabsToolbar {
+  margin-top: 1px;
+}
+
+#TabsToolbar {
+  margin-top: 5px;
+}
+
+/* Simplifying interface */
+
+#nav-bar {
+  /* customize this value. */
+  width: var(--navbarWidth);
+  margin-bottom: 0;
+  z-index: -100;
+  transition: all 0.3s ease !important;
+  opacity: 0;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 5px;
+  top: 0;
+
+  /*border: 1px solid #eba0ac !important;*/
+}
+
+#navigator-toolbox:hover > #nav-bar,
+#navigator-toolbox:focus-within > #nav-bar {
+  margin-bottom: var(--navbar-margin);
+  z-index: 1000 !important;
+  opacity: 1;
+  top: 45px;
+}
+
+.titlebar-spacer {
+  display: none !important;
+}
+
+#urlbar-background {
+  border: none !important;
+}
+
+#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
+  box-shadow: none !important;
+  background: none !important;
+}
+
+/* Hide urlbar elements when not active */
+
+.urlbar-icon,
+#userContext-indicator,
+#userContext-label {
+  fill: transparent !important;
+  background: transparent !important;
+  color: transparent !important;
+}
+
+#urlbar:hover .urlbar-icon,
+#urlbar:active .urlbar-icon,
+#urlbar[focused] .urlbar-icon {
+  fill: var(--toolbar-color) !important;
+}
+
+/* animations */
+.subviewbutton,
+#urlbar-background,
+.urlbar-icon,
+#userContext-indicator,
+#userContext-label,
+.urlbar-input-box,
+#identity-box,
+#tracking-protection-icon-container,
+[anonid="urlbar-go-button"],
+.urlbar-icon-wrapper,
+#tracking-protection-icon,
+#identity-box image,
+stack,
+tab:not(:active) .tab-background,
+tab:not([beforeselected-visible])::after,
+tab[visuallyselected] .tab-background::before,
+tab[visuallyselected] .tab-background::before,
+.tab-close-button {
+  transition: var(--animationSpeed) !important;
+}
+

@@ -31,10 +31,10 @@ alias open="${HOME}/.dotfiles/scripts/open.sh"
 alias todo="${HOME}/.dotfiles/scripts/todo.sh"
 todo
 alias translate="${HOME}/.dotfiles/scripts/translate.sh"
+alias pdf="libreoffice --headless --convert-to pdf"
 
 # directories
 alias bmstu="cd ~/Documents/BMSTU"
-alias downloads="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias javacourse="cd ~/Documents/LeeRV-JAVA314/module-5-spring"
 alias config="cd ~/.config"
@@ -65,6 +65,7 @@ alias cat='bat -p'
 alias lg='lazygit'
 alias py='python'
 alias log-out="hyprctl dispatch exit"
+alias obs-vc="sudo modprobe v4l2loopback"
 
 usb() {
     sudo mount -o gid=users,fmask=113,dmask=002 $1 ~/media/usb
