@@ -19,6 +19,7 @@ return {
 				cpp = { "clang-format" },
 				sh = { "beautysh" },
 				zsh = { "beautysh" },
+        xml = { "xmlformat"}
 			},
 		})
 

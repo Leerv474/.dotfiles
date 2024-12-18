@@ -1,7 +1,7 @@
 return {
     "Wansmer/langmapper.nvim",
     lazy = false,
-    priority = 1, -- High priority is needed if you will use `autoremap()`
+    priority = 1,
     config = function()
         local function escape(str)
             -- You need to escape these characters to work correctly
@@ -16,7 +16,6 @@ return {
         local ru_shift = [[ËЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]]
 
         vim.opt.langmap = vim.fn.join({
-            -- | `to` should be first     | `from` should be second
             escape(ru_shift)
                 .. ";"
                 .. escape(en_shift),

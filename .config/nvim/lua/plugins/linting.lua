@@ -7,9 +7,7 @@ return {
 
         lint.linters_by_ft = {
             javascript = { "eslint_d" },
-            typescript = { "eslint_d" },
             javascriptreact = { "eslint_d" },
-            typescriptreact = { "eslint_d" },
             python = { "pylint" },
             cpp = { "cpplint" },
             java = { "checkstyle" },
@@ -26,6 +24,7 @@ return {
             end,
         }
         lint.linters.eslint_d.args = {
+            "no--warn-ignored",
             "--format",
             "json",
             "--stdin",

@@ -15,7 +15,7 @@ return {
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
-					statusline = {},
+					statusline = { "neo-tree" },
 					winbar = {},
 				},
 				ignore_focus = {},
@@ -47,12 +47,22 @@ return {
 				lualine_z = { "location" },
 			},
 			inactive_sections = {
-				lualine_a = {},
+				lualine_a = {
+					{
+						"filename",
+						symbols = {
+							modified = "", -- Text to show when the file is modified.
+							readonly = "󰏯", -- Text to show when the file is non-modifiable or readonly.
+							unnamed = "[No Name]", -- Text to show for unnamed buffers.
+							newfile = "[New]", -- Text to show for newly created file before first write
+						},
+					},
+				},
 				lualine_b = {},
-				lualine_c = { "filename" },
-				lualine_x = { "location" },
-				lualine_y = {},
-				lualine_z = {},
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
 			},
 			tabline = {},
 			winbar = {},

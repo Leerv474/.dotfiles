@@ -4,8 +4,9 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lspconfig = require("lspconfig")
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		local capabilities = require('blink-cmp').get_lsp_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 		local function on_attach(client, bufnr)
 			if client.server_capabilities.documentFormattingProvider then
 				vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
@@ -18,7 +19,8 @@ return {
 			vim.keymap.set(
 				"n",
 				"gR",
-				"<cmd>Telescope lsp_references<CR>",
+				-- "<cmd>Telescope lsp_references<CR>",
+				"<cmd>FzfLua lsp_references<CR>",
 				vim.tbl_extend("force", bufopts, { desc = "List references" })
 			)
 			vim.keymap.set(
@@ -30,25 +32,20 @@ return {
 			vim.keymap.set(
 				"n",
 				"gd",
-				"<cmd>Telescope lsp_definitions<CR>",
+				vim.lsp.buf.definition,
 				vim.tbl_extend("force", bufopts, { desc = "List definitions" })
 			)
 			vim.keymap.set(
 				"n",
 				"gi",
-				"<cmd>Telescope lsp_implementations<CR>",
+				-- "<cmd>Telescope lsp_implementations<CR>",
+				"<cmd>FzfLua lsp_implementations<CR>",
 				vim.tbl_extend("force", bufopts, { desc = "List implementations" })
-			)
-			vim.keymap.set(
-				"n",
-				"gt",
-				"<cmd>Telescope lsp_type_definitions<CR>",
-				vim.tbl_extend("force", bufopts, { desc = "List type definitions" })
 			)
 			vim.keymap.set(
 				{ "n", "v" },
 				"<leader>ca",
-				vim.lsp.buf.code_action,
+				"<cmd>FzfLua lsp_code_actions previewer=none<CR>",
 				vim.tbl_extend("force", bufopts, { desc = "Code actions" })
 			)
 			vim.keymap.set(
@@ -59,15 +56,16 @@ return {
 			)
 			vim.keymap.set(
 				"n",
-				"<leader>D",
-				"<cmd>Telescope diagnostics bufnr=0<CR>",
+				"<leader>d",
+				-- "<cmd>Telescope diagnostics bufnr=0<CR>",
+				"<cmd>FzfLua diagnostics_document<CR>",
 				vim.tbl_extend("force", bufopts, { desc = "Show diagnostics for file" })
 			)
 			vim.keymap.set(
 				"n",
-				"<leader>d",
-				vim.diagnostic.open_float,
-				vim.tbl_extend("force", bufopts, { desc = "Show diagnostics for line" })
+				"<leader>D",
+				"<cmd>FzfLua diagnostics_workspace<CR>",
+				vim.tbl_extend("force", bufopts, { desc = "Show diagnostics for workspace" })
 			)
 			vim.keymap.set(
 				"n",
@@ -83,7 +81,7 @@ return {
 			)
 			vim.keymap.set(
 				"n",
-				"K",
+				"<leader>d",
 				vim.lsp.buf.hover,
 				vim.tbl_extend("force", bufopts, { desc = "Documentation under cursor" })
 			)

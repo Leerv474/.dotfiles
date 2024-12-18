@@ -1,5 +1,17 @@
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- HJKL is too rare of a use case
+vim.keymap.set("n", "H", "_")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("n", "J", "<C-d>")
+vim.keymap.set("n", "K", "<C-u>")
+
+vim.keymap.set("n", "<C-H>", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+vim.keymap.set("n", "<C-L", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+vim.keymap.set("n", "<C-K>", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+vim.keymap.set("n", "<C-J>", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
+
 -- split screen
 vim.keymap.set("n", "<leader>sv", vim.cmd.vsplit, { desc = "split vertically" })
 vim.keymap.set("n", "<leader>sh", vim.cmd.split, { desc = "split horizontally" })
@@ -34,3 +46,5 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
+-- for reach projects
+vim.keymap.set("n", "<leader>crc", ":!~/.dotfiles/scripts/create-react-component.sh")

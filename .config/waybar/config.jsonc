@@ -78,10 +78,10 @@
     },
     "network": {
         "format-wifi": "  {essid}",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "",
+        "format-linked": "{ifname} ",
         "format-disconnected": "󰤮 Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}"
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
