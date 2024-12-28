@@ -23,14 +23,14 @@ ${GREEN}usage:${NORMAL} note <operation>
 ${GREEN}operations:${NORMAL}
     note --help
     note (open note)
-    note -n [filename] (new note)
-    note -r (remove note)
-    note -g (save to git)
+    note new [filename] (new note)
+    note rm (remove note)
+    note git (save to git)
     "
     exit 0
 fi
 
-if [ "$1" = '-r' ]; then
+if [ "$1" = 'rm' ]; then
     selected_file=$(fd --search-path "${NOTEPATH}" --type f | fzf)
     if [ $? -eq 0 ] && [ -n "$selected_file" ]; then
         echo -e "Are you sure you want to delete ${selected_file}? (Y/n): "
@@ -48,7 +48,7 @@ if [ "$1" = '-r' ]; then
     exit 0
 fi
 
-if [ "$1" = '-g' ]; then
+if [ "$1" = 'git' ]; then
     git -C ~/Documents/Notes commit -m "update"
     git -C ~/Documents/Notes push
     exit
@@ -58,7 +58,7 @@ if [ "$#" -ne 2 ]; then
     echo -e "${RED}error:${NORMAL} bad argument (use --help)"
     exit 1
 fi
-if [ "$1" = '-n' ]; then
+if [ "$1" = 'new' ]; then
     if [[ "$2" == *"."* ]]; then
         echo -e "${RED}error:${NORMAL} note name should not have an extension"
     fi

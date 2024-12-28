@@ -30,6 +30,7 @@ alias note="${HOME}/.dotfiles/scripts/note.sh"
 alias open="${HOME}/.dotfiles/scripts/open.sh"
 alias todo="${HOME}/.dotfiles/scripts/todo.sh"
 todo
+alias dev="${HOME}/.dotfiles/scripts/dev.sh"
 alias translate="${HOME}/.dotfiles/scripts/translate.sh"
 alias pdf="libreoffice --headless --convert-to pdf"
 

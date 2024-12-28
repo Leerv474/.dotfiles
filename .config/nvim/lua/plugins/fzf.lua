@@ -18,7 +18,7 @@ return {
 			files = {
 				prompt = "Files❯ ",
 				path_shorten = 16,
-				actions = { ["ctrl-g"] = false },
+				actions = { ["ctrl-g"] = true},
 				cwd_prompt = false,
 			},
 		})

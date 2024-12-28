@@ -94,4 +94,6 @@ user_pref("webgl.disabled", true);
 user_pref("browser.newtabpage.activity-stream.logowordmark.AlwaysVisible", false);
 user_pref("browser.sessionstore.restore_on_demand", false);
 user_pref("browser.sessionstore.restore_tabs_lazily", false);
+// enable vaapi so firefox uses gpu for video instead of cpu
+user_pref("media.ffmpeg.vaapi.enabled", true)
 

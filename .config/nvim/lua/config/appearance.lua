@@ -33,4 +33,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-
+vim.diagnostic.config({
+    virtual_text = { severity = vim.diagnostic.severity.ERROR },
+    underline = true,
+    signs = true,
+    update_in_insert = false,
+})

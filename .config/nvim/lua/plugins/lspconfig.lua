@@ -98,6 +98,7 @@ return {
 			"marksman",
 			"sqls",
 			"yamlls",
+      "lemminx"
 		}
 
 		for _, value in ipairs(lsplist) do
