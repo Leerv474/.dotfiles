@@ -3,7 +3,7 @@ add_newline = false
 [directory]
 read_only = " 󰌾"
 style = "fg:blue"
-format = "[ $path ]($style)"
+format = "[$path ]($style)"
 # truncation is in fucking chars
 truncation_length = 64
 truncation_symbol = "…/"

@@ -1,0 +1,6 @@
+font-size = 10
+font-family = "JetBrains Mono"
+theme = "catppuccin-mocha"
+window-decoration = false
+confirm-close-surface = false
+resize-overlay = never

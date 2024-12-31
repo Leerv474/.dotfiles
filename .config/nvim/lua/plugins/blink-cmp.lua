@@ -17,7 +17,7 @@ return {
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
-			min_keyword_length = 2,
+			min_keyword_length = 0,
       cmdline = {},
 		},
 
