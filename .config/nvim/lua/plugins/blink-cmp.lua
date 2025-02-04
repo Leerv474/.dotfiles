@@ -18,12 +18,12 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 			min_keyword_length = 0,
-      cmdline = {},
+			cmdline = {},
 		},
 
 		completion = {
 			list = {
-				selection = "manual",
+				selection = { preselect = false, auto_insert = false},
 			},
 		},
 		signature = { enabled = true },

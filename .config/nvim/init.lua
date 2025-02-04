@@ -28,4 +28,3 @@ require("config.set")
 require("config.remap")
 require("config.appearance")
 require("lazy").setup("plugins", opts)
-

@@ -11,7 +11,6 @@ return {
 				{
 					filetypes = {
 						"lua",
-						"cpp",
 						"html",
 						"css",
 						"javascript",
