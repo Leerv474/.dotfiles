@@ -4,7 +4,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lspconfig = require("lspconfig")
-		local capabilities = require('blink-cmp').get_lsp_capabilities()
+		local capabilities = require("blink-cmp").get_lsp_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 		local function on_attach(client, bufnr)
@@ -98,7 +98,8 @@ return {
 			"marksman",
 			"sqls",
 			"yamlls",
-      "lemminx"
+			"lemminx",
+			"clangd",
 		}
 
 		for _, value in ipairs(lsplist) do

@@ -35,7 +35,7 @@ alias translate="${HOME}/.dotfiles/scripts/translate.sh"
 alias pdf="libreoffice --headless --convert-to pdf"
 
 # directories
-alias bmstu="cd ~/Documents/BMSTU"
+alias bmstu="cd ~/Documents/BMSTU; cat plan.md"
 alias docs="cd ~/Documents"
 alias javacourse="cd ~/Documents/LeeRV-JAVA314/module-5-spring"
 alias config="cd ~/.config"
