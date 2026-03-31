@@ -36,6 +36,7 @@ return {
 					"marksman",
 					"ts_ls",
 					"sqls",
+					"gopls",
 				},
 			})
 
@@ -53,6 +54,7 @@ return {
 					"checkstyle",
 					"pylint",
 					"luacheck",
+          "golandci"
 				},
 			})
 		end,

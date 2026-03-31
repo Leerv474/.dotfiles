@@ -21,6 +21,8 @@ return {
 				zsh = { "beautysh" },
 				xml = { "xmlformat" },
 				c = { "clang-format" },
+				go = { "gofumpt", "goimports" },
+				cs = { "csharpier" },
 			},
 		})
 

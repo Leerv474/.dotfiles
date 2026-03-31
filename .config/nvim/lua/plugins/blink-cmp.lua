@@ -18,14 +18,17 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 			min_keyword_length = 0,
-			cmdline = {},
 		},
 
 		completion = {
+			documentation = { window = { border = "single" } },
 			list = {
-				selection = { preselect = false, auto_insert = false},
+				selection = { preselect = false, auto_insert = false },
 			},
 		},
-		signature = { enabled = true },
+		signature = {
+			enabled = true,
+			window = { border = "single" },
+		},
 	},
 }

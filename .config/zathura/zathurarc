@@ -1,1 +1,9 @@
 include light-theme
+
+set selection-clipboard clipboard
+
+set incremental-search true
+
+map <C-i> zoom in
+map <C-o> zoom out
+

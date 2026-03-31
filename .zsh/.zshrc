@@ -16,6 +16,7 @@ fastfetch
 export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
@@ -34,8 +35,10 @@ alias dev="${HOME}/.dotfiles/scripts/dev.sh"
 alias translate="${HOME}/.dotfiles/scripts/translate.sh"
 alias pdf="libreoffice --headless --convert-to pdf"
 
+alias goose="~/go/bin/goose"
+
 # directories
-alias bmstu="cd ~/Documents/BMSTU; cat plan.md"
+alias bmstu="cd ~/Documents/BMSTU; cat plan.md; ls"
 alias docs="cd ~/Documents"
 alias javacourse="cd ~/Documents/LeeRV-JAVA314/module-5-spring"
 alias config="cd ~/.config"
@@ -61,12 +64,14 @@ alias :q="exit"
 alias cdate='date "+%Y-%m-%d %A %H:%M"'
 alias sd='shutdown now'
 alias cls='clear'
-# alias ssh='kitten ssh'
 alias cat='bat -p'
 alias lg='lazygit'
-alias py='python'
+alias py='export TRIES=$((TRIES + 1)) && python'
 alias log-out="hyprctl dispatch exit"
 alias obs-vc="sudo modprobe v4l2loopback"
+
+alias gametime='hyprctl keyword input:kb_options "grp:alt_shift_toggle"'
+alias nogametime='hyprctl keyword input:kb_options "grp:alt_shift_toggle, altwin:swap_lalt_lwin"'
 
 usb() {
     sudo mount -o gid=users,fmask=113,dmask=002 $1 ~/media/usb

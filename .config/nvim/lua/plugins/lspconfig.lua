@@ -3,7 +3,6 @@ return {
 	dependencies = { "saghen/blink.cmp" },
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		local lspconfig = require("lspconfig")
 		local capabilities = require("blink-cmp").get_lsp_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -54,13 +53,13 @@ return {
 				vim.lsp.buf.rename,
 				vim.tbl_extend("force", bufopts, { desc = "Smart rename" })
 			)
-			vim.keymap.set(
-				"n",
-				"<leader>d",
-				-- "<cmd>Telescope diagnostics bufnr=0<CR>",
-				"<cmd>FzfLua diagnostics_document<CR>",
-				vim.tbl_extend("force", bufopts, { desc = "Show diagnostics for file" })
-			)
+			-- vim.keymap.set(
+			-- 	"n",
+			-- 	"<leader>d",
+			-- 	-- "<cmd>Telescope diagnostics bufnr=0<CR>",
+			-- 	"<cmd>FzfLua diagnostics_document<CR>",
+			-- 	vim.tbl_extend("force", bufopts, { desc = "Show diagnostics for file" })
+			-- )
 			vim.keymap.set(
 				"n",
 				"<leader>D",
@@ -81,7 +80,7 @@ return {
 			)
 			vim.keymap.set(
 				"n",
-				"<leader>d",
+				"<leader>h",
 				vim.lsp.buf.hover,
 				vim.tbl_extend("force", bufopts, { desc = "Documentation under cursor" })
 			)
@@ -100,10 +99,14 @@ return {
 			"yamlls",
 			"lemminx",
 			"clangd",
+			"gopls",
+			"rust_analyzer",
+      "checkmate",
+      "omnisharp"
 		}
 
 		for _, value in ipairs(lsplist) do
-			lspconfig[value].setup({
+			vim.lsp.config(value, {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})

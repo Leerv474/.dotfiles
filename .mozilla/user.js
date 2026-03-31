@@ -89,7 +89,7 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("privacy.resistFingerprinting", false); // Used to help resist fingerprinting but breaks dark mode and screenshots (among other features)… set to `true` for increased privacy
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("privacy.resistFingerprinting.letterboxing", false); // Used to help resist fingerprinting… set to `false` to disable letterboxing
-user_pref("webgl.disabled", true);
+user_pref("webgl.disabled", false);
 // disable firefox logo
 user_pref("browser.newtabpage.activity-stream.logowordmark.AlwaysVisible", false);
 user_pref("browser.sessionstore.restore_on_demand", false);
