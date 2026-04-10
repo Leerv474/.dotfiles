@@ -29,6 +29,7 @@ return {
                 "json",
                 "json5",
                 "markdown",
+                -- "cs"
             },
 
             sync_install = false,

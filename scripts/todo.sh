@@ -19,9 +19,18 @@ todo_list() {
     fi
 
     max_length=0
+    term_width=$(tput cols)
+    usable_width=$((term_width - 16))
+
     while IFS= read -r line; do
-        if [ ${#line} -gt $max_length ]; then
-            max_length=${#line}
+        if (( ${#line} > usable_width )); then
+            line_length=$usable_width
+        else
+            line_length=${#line}
+        fi
+
+        if (( line_length > max_length )); then
+            max_length=$line_length
         fi
     done < "$TODO_FILE"
 
@@ -40,6 +49,9 @@ todo_list() {
 
     line_number=1
     while IFS= read -r line; do
+        if (( ${#line} > usable_width )); then
+            line="${line:0:usable_width-3}..."
+        fi
         line_length=${#line}
         total_length=$((max_length + 2))
 
