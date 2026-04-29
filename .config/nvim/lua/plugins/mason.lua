@@ -1,7 +1,7 @@
 ---@diagnostic disable: missing-fields, undefined-global
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -13,6 +13,12 @@ return {
 			local mason_installer = require("mason-tool-installer")
 
 			mason.setup({
+
+				registries = {
+					"github:Crashdummyy/mason-registry", -- this contains the register for Roslyn
+					"github:mason-org/mason-registry",
+				},
+
 				ui = {
 					icons = {
 						package_installed = "󰄳",
@@ -54,7 +60,7 @@ return {
 					"checkstyle",
 					"pylint",
 					"luacheck",
-          "golandci"
+					"golandci",
 				},
 			})
 		end,

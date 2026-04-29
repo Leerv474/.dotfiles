@@ -4,11 +4,16 @@ return {
 	config = function()
 		local conform = require("conform")
 		conform.setup({
+			formatters = {
+				prettier = {
+					prepend_args = { "--tab-width", "4", "--print-width", "120" },
+				},
+			},
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
+				-- javascript = { "prettier" },
+				-- typescript = { "prettier" },
+				-- javascriptreact = { "prettier" },
+				-- typescriptreact = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
@@ -22,7 +27,7 @@ return {
 				xml = { "xmlformat" },
 				c = { "clang-format" },
 				go = { "gofumpt", "goimports" },
-				cs = { "csharpier" },
+				-- cs = { "csharpier" },
 			},
 		})
 

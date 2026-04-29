@@ -5,20 +5,34 @@ return {
 		local fzf = require("fzf-lua")
 		fzf.setup({
 			"telescope",
+			ui_select = true,
 			winopts = {
-				height = 0.75,
-				width = 0.70,
 				border = "single",
-				backdrop = 80,
-				treesitter = {
-					enabled = true,
-					fzf_colors = { ["hl"] = "-1:reverse", ["hl+"] = "-1:reverse" },
+				preview = {
+					border = "single", -- preview border: accepts both `nvim_open_win`
+					scrollbar = "float", -- `false` or string:'float|border'
+					-- float:  in-window floating border
+					-- border: in-border "block" marker
+					scrolloff = -1, -- float scrollbar offset from right
+					-- applies only when scrollbar = 'float'
+					delay = 20, -- delay(ms) displaying the preview
+					-- prevents lag on fast scrolling
+					winopts = { -- builtin previewer window options
+						number = true,
+						relativenumber = false,
+						cursorline = true,
+						cursorlineopt = "both",
+						cursorcolumn = false,
+						signcolumn = "no",
+						list = false,
+						foldenable = false,
+						foldmethod = "manual",
+					},
 				},
 			},
 			files = {
 				prompt = "Files❯ ",
-				path_shorten = 16,
-				actions = { ["ctrl-g"] = true},
+				path_shorten = 16, -- 'true' or number, shorten path?
 				cwd_prompt = false,
 			},
 		})

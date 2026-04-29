@@ -1,12 +1,6 @@
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- HJKL is too rare of a use case
-vim.keymap.set("n", "H", "_")
-vim.keymap.set("n", "L", "$")
-vim.keymap.set("n", "J", "<C-d>")
-vim.keymap.set("n", "K", "<C-u>")
-
 -- quickfix
 vim.keymap.set("n", "<leader>cn", vim.cmd.cnext, { desc = "quickfix next" })
 vim.keymap.set("n", "<leader>cp", vim.cmd.cprevious, { desc = "quickfix next" })

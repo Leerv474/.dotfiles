@@ -11,12 +11,12 @@ return {
 				{
 					filetypes = {
 						"lua",
-						"html",
-						"css",
-						"javascript",
-						"typescript",
-						"javascriptreact",
-						"typescriptreact",
+						-- "html",
+						-- "css",
+						-- "javascript",
+						-- "typescript",
+						-- "javascriptreact",
+						-- "typescriptreact",
 						"json",
 						"yaml",
             "xml",

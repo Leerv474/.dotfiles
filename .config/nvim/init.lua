@@ -16,7 +16,7 @@ local opts = {
     change_detection = {
         notify = false
     },
-    cheker = {
+    checker = {
         enabled = true,
         notify = false
     }

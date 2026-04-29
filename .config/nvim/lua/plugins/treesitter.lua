@@ -1,70 +1,77 @@
 ---@diagnostic disable: missing-fields
 return {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile" },
-    build = ":TSUpdate",
-    dependencies = {
-        "windwp/nvim-ts-autotag",
-        "theHamsta/nvim-treesitter-pairs",
-    },
+	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
+	build = ":TSUpdate",
+	dependencies = {
+		"windwp/nvim-ts-autotag",
+	},
 
-    config = function()
-        local treesitter = require("nvim-treesitter.configs")
-        treesitter.setup({
-            ensure_installed = {
-                "java",
-                "c",
-                "lua",
-                "vim",
-                "vimdoc",
-                "query",
-                "bash",
-                "html",
-                "css",
-                "javascript",
-                "json",
-                "python",
-                "xml",
-                "sql",
-                "json",
-                "json5",
-                "markdown",
-                -- "cs"
-            },
+	config = function()
+		local filetypes = {
+			"java",
+			"c",
+			"lua",
+			"vim",
+			"vimdoc",
+			"query",
+			"bash",
+			"html",
+			"css",
+			"javascript",
+			"typescript",
+			"typescriptreact",
+			"javascriptreact",
+			"json",
+			"python",
+			"xml",
+			"sql",
+			"json",
+			"json5",
+			"markdown",
+			"razor",
+			"cs",
+      "hyprlang"
+		}
+		vim.cmd.syntax("off")
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = filetypes,
+			callback = function()
+				-- local filetype = vim.bo.filetype
+				-- if filetype == "neo-tree" or filetype == "fzf" then
+				-- 	return
+				-- end
+				vim.treesitter.start()
+			end,
+		})
+		local treesitter = require("nvim-treesitter")
 
-            sync_install = false,
+		local parsers = {
+			"java",
+			"c",
+			"lua",
+			"vim",
+			"vimdoc",
+			"query",
+			"bash",
+			"html",
+			"css",
+			"javascript",
+			"typescript",
+			"tsx",
+			"jsx",
+			"json",
+			"python",
+			"xml",
+			"sql",
+			"json",
+			"json5",
+			"markdown",
+			"razor",
+			"c_sharp",
+			"hyprlang",
+		}
 
-            auto_install = true,
-
-            highlight = {
-                enable = true,
-                disable = function(_, buf)
-                    local max_filesize = 1024 * 1024 * 1024 -- 1000 KB
-                    local filename = vim.api.nvim_buf_get_name(buf)
-                    local ok, stats = pcall(vim.uv.fs_stat, filename)
-                    if ok and stats and stats.size > max_filesize then
-                        return true
-                    end
-                end,
-            },
-
-            pairs = {
-                enable = true,
-                disable = {},
-                highlight_pair_events = {},
-                highlight_self = true,
-                goto_right_end = false,
-                fallback_cmd_normal = "call matchit#Match_wrapper('',1,'n')",
-                keymaps = {
-                    goto_partner = "<leader>%",
-                    delete_balanced = "X",
-                },
-                delete_balanced = {
-                    only_on_first_char = false,
-                    fallback_cmd_normal = nil,
-                    longest_partner = false,
-                },
-            },
-        })
-    end,
+		treesitter.install(parsers)
+	end,
 }
